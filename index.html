@@ -162,6 +162,10 @@
         </div>
       </div>
 
+      <div class="amenities-toggle-wrap">
+        <button class="amenities-toggle" id="amenities-toggle">Show all amenities</button>
+      </div>
+
       <!-- Expandable full list -->
       <div class="amenities-full" id="amenities-full">
         <div class="amenities-category">
@@ -230,10 +234,6 @@
             <li data-i18n="amenities.nearby.festivals">Local festivals April–September</li>
           </ul>
         </div>
-      </div>
-
-      <div class="amenities-toggle-wrap">
-        <button class="amenities-toggle" id="amenities-toggle" data-i18n="amenities.showAll">Show all amenities</button>
       </div>
     </div>
   </section>
@@ -401,12 +401,19 @@
       var btn = document.getElementById('amenities-toggle');
       var panel = document.getElementById('amenities-full');
       if (!btn || !panel) return;
+
+      function getBtnText(open) {
+        var lang = localStorage.getItem('lang') || 'en';
+        if (open) return lang === 'it' ? 'Nascondi servizi' : 'Hide amenities';
+        return lang === 'it' ? 'Mostra tutti i servizi' : 'Show all amenities';
+      }
+
+      // Set initial text based on language
+      btn.textContent = getBtnText(false);
+
       btn.addEventListener('click', function () {
         var isOpen = panel.classList.toggle('amenities-open');
-        var lang = localStorage.getItem('lang') || 'en';
-        btn.textContent = isOpen
-          ? (lang === 'it' ? 'Nascondi servizi' : 'Hide amenities')
-          : (lang === 'it' ? 'Mostra tutti i servizi' : 'Show all amenities');
+        btn.textContent = getBtnText(isOpen);
       });
     })();
   </script>
