@@ -28,7 +28,17 @@ var translations = {
     'gallery.subtitle': 'A glimpse of life at La Sosta di Sismano.',
 
     // Testimonial
+    'testimonial.badge': 'Guest favourite',
     'testimonial.count': 'from 33 reviews',
+
+    // House Info
+    'houseinfo.title': 'Good to Know',
+    'houseinfo.checkin.label': 'Check-in',
+    'houseinfo.checkout.label': 'Checkout',
+    'houseinfo.checkout.value': 'before 10:00',
+    'houseinfo.guests.label': 'Maximum guests',
+    'houseinfo.guests.value': '4',
+    'houseinfo.registration.label': 'Registration',
 
     // Amenities
     'amenities.title': 'What This Place Offers',
@@ -182,7 +192,17 @@ var translations = {
     'gallery.subtitle': 'Uno sguardo alla vita a La Sosta di Sismano.',
 
     // Testimonial
+    'testimonial.badge': 'Preferito dagli ospiti',
     'testimonial.count': 'da 33 recensioni',
+
+    // House Info
+    'houseinfo.title': 'Da sapere',
+    'houseinfo.checkin.label': 'Check-in',
+    'houseinfo.checkout.label': 'Checkout',
+    'houseinfo.checkout.value': 'entro le 10:00',
+    'houseinfo.guests.label': 'Ospiti massimo',
+    'houseinfo.guests.value': '4 ospiti massimo',
+    'houseinfo.registration.label': 'Registrazione',
 
     // Amenities
     'amenities.title': 'Cosa offre questa casa',

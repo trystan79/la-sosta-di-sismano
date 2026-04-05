@@ -447,6 +447,54 @@ h1, h2, h3, h4 {
 }
 
 
+/* --- Guest Favourite Badge --- */
+.guest-favourite {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  border: 2px solid var(--terracotta);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+
+/* --- House Info --- */
+.house-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.house-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.house-info-item:last-child {
+  border-bottom: none;
+}
+
+.house-info-label {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.house-info-value {
+  font-weight: 600;
+  color: var(--brown);
+  font-size: 0.95rem;
+}
+
+
 /* --- Amenities --- */
 .amenities-top-grid {
   display: grid;
