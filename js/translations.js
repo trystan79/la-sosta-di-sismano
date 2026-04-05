@@ -45,6 +45,12 @@ var translations = {
     'hosts.primary.bio': 'Discovered Umbria at 17 and eventually made Sismano her adopted home. Passionate about walks, hiking, gardening, local festivals, and food. Loves the pastoral charm and warmth of the Umbrian people.',
     'hosts.cohost.badge': 'Co-host',
 
+    // Contact
+    'contact.title': 'Book Your Stay',
+    'contact.subtitle': 'Get in touch to check availability and book directly.',
+    'contact.primary.label': 'Primary Contact',
+    'contact.alternate.label': 'Alternate Contact',
+
     // Footer
     'footer.explore': 'Explore',
     'footer.book.title': 'Book Your Stay',
@@ -139,6 +145,12 @@ var translations = {
     'hosts.primary.response': 'Risponde rapidamente',
     'hosts.primary.bio': 'Ha scoperto l\u2019Umbria a 17 anni e ha finito per fare di Sismano la sua casa d\u2019adozione. Appassionata di passeggiate, escursioni, giardinaggio, sagre paesane e buona cucina. Ama il fascino rurale e il calore della gente umbra.',
     'hosts.cohost.badge': 'Co-host',
+
+    // Contact
+    'contact.title': 'Prenota il tuo soggiorno',
+    'contact.subtitle': 'Contattaci per verificare la disponibilit\u00e0 e prenotare direttamente.',
+    'contact.primary.label': 'Contatto principale',
+    'contact.alternate.label': 'Contatto alternativo',
 
     // Footer
     'footer.explore': 'Esplora',

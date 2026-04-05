@@ -742,6 +742,60 @@ h1, h2, h3, h4 {
 }
 
 
+/* --- Contact Section --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background-color: var(--cream);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.contact-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--brown);
+  margin-bottom: 1rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contact-detail a {
+  color: var(--terracotta);
+}
+
+.contact-detail a:hover {
+  color: var(--terracotta-light);
+}
+
+
 /* --- Page Header (for About) --- */
 .page-header {
   background:
@@ -806,6 +860,10 @@ h1, h2, h3, h4 {
   }
 
   .hosts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
