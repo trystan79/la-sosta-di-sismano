@@ -30,6 +30,12 @@ var translations = {
     // Testimonial
     'testimonial.count': 'from 33 reviews',
 
+    // Day Trips
+    'daytrips.title': 'Day Trips',
+    'daytrips.todi': 'nearby',
+    'daytrips.rome.name': 'Rome',
+    'daytrips.rome.time': 'day trip',
+
     // Hosts
     'hosts.title': 'Your Hosts',
     'hosts.primary.badge': 'Primary Host',
@@ -118,6 +124,12 @@ var translations = {
 
     // Testimonial
     'testimonial.count': 'da 33 recensioni',
+
+    // Day Trips
+    'daytrips.title': 'Gite di un giorno',
+    'daytrips.todi': 'vicino',
+    'daytrips.rome.name': 'Roma',
+    'daytrips.rome.time': 'gita di un giorno',
 
     // Hosts
     'hosts.title': 'I vostri host',
