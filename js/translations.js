@@ -91,7 +91,7 @@ var translations = {
     'amenities.access.chair': 'Shower/bath chair',
     'amenities.cat.nearby': 'Nearby',
     'amenities.nearby.restaurants': '5 restaurants within 5 km',
-    'amenities.nearby.walking': 'Walking distance to local caff\u00e8, bar, shop',
+    'amenities.nearby.walking': 'Local caff\u00e8, bar & shop \u2014 20 min walk / 5 min drive, open 5:30 am \u2013 9:30 pm, 7 days',
     'amenities.nearby.wineries': 'Easy access to Umbrian wineries (Montefalco & Orvieto)',
     'amenities.nearby.festivals': 'Local festivals April\u2013September',
 
@@ -257,7 +257,7 @@ var translations = {
     'amenities.access.chair': 'Sedia per doccia',
     'amenities.cat.nearby': 'Nei dintorni',
     'amenities.nearby.restaurants': '5 ristoranti entro 5 km',
-    'amenities.nearby.walking': 'A piedi dal caff\u00e8, bar, alimentari del paese',
+    'amenities.nearby.walking': 'Caff\u00e8, bar e alimentari del paese \u2014 20 min a piedi / 5 min in auto, aperto 5:30 \u2013 21:30, 7 giorni su 7',
     'amenities.nearby.wineries': 'Facile accesso alle cantine umbre (Montefalco e Orvieto)',
     'amenities.nearby.festivals': 'Sagre paesane da aprile a settembre',
 

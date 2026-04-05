@@ -163,7 +163,7 @@
       </div>
 
       <div class="amenities-toggle-wrap">
-        <button class="amenities-toggle" id="amenities-toggle">Show all amenities</button>
+        <button class="amenities-toggle" id="amenities-toggle" onclick="var p=document.getElementById('amenities-full');var o=p.classList.toggle('amenities-open');this.textContent=o?(localStorage.getItem('lang')==='it'?'Nascondi servizi':'Hide amenities'):(localStorage.getItem('lang')==='it'?'Mostra tutti i servizi':'Show all amenities');">Show all amenities</button>
       </div>
 
       <!-- Expandable full list -->
@@ -229,7 +229,7 @@
           <h3 data-i18n="amenities.cat.nearby">Nearby</h3>
           <ul>
             <li data-i18n="amenities.nearby.restaurants">5 restaurants within 5 km</li>
-            <li data-i18n="amenities.nearby.walking">Walking distance to local caff&egrave;, bar, shop</li>
+            <li data-i18n="amenities.nearby.walking">Local caff&egrave;, bar &amp; shop — 20 min walk / 5 min drive, open 5:30 am – 9:30 pm, 7 days</li>
             <li data-i18n="amenities.nearby.wineries">Easy access to Umbrian wineries (Montefalco & Orvieto)</li>
             <li data-i18n="amenities.nearby.festivals">Local festivals April–September</li>
           </ul>
@@ -396,26 +396,5 @@
 
   <script src="js/translations.js"></script>
   <script src="js/i18n.js"></script>
-  <script>
-    (function () {
-      var btn = document.getElementById('amenities-toggle');
-      var panel = document.getElementById('amenities-full');
-      if (!btn || !panel) return;
-
-      function getBtnText(open) {
-        var lang = localStorage.getItem('lang') || 'en';
-        if (open) return lang === 'it' ? 'Nascondi servizi' : 'Hide amenities';
-        return lang === 'it' ? 'Mostra tutti i servizi' : 'Show all amenities';
-      }
-
-      // Set initial text based on language
-      btn.textContent = getBtnText(false);
-
-      btn.addEventListener('click', function () {
-        var isOpen = panel.classList.toggle('amenities-open');
-        btn.textContent = getBtnText(isOpen);
-      });
-    })();
-  </script>
 </body>
 </html>
