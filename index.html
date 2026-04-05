@@ -133,6 +133,10 @@
           <span data-i18n="amenities.top.accessible">Single level — fully accessible</span>
         </div>
         <div class="amenity-item">
+          <span class="amenity-icon">&#10052;</span>
+          <span data-i18n="amenities.top.ac">Air conditioning</span>
+        </div>
+        <div class="amenity-item">
           <span class="amenity-icon">&#128246;</span>
           <span data-i18n="amenities.top.wifi">Wi-Fi — 250 Mbps down / 150 Mbps up</span>
         </div>
@@ -159,7 +163,7 @@
       </div>
 
       <!-- Expandable full list -->
-      <div class="amenities-full" id="amenities-full" hidden>
+      <div class="amenities-full" id="amenities-full">
         <div class="amenities-category">
           <h3 data-i18n="amenities.cat.property">Property</h3>
           <ul>
@@ -185,6 +189,7 @@
         <div class="amenities-category">
           <h3 data-i18n="amenities.cat.comfort">Comfort & Connectivity</h3>
           <ul>
+            <li data-i18n="amenities.comfort.ac">Air conditioning</li>
             <li data-i18n="amenities.comfort.wifi">Wi-Fi throughout — 250 Mbps down / 150 Mbps up</li>
             <li data-i18n="amenities.comfort.workspace">Dedicated workspace</li>
             <li data-i18n="amenities.comfort.washing">Washing machine</li>
@@ -279,15 +284,16 @@
     </div>
   </section>
 
-  <!-- Host Information -->
-  <section class="section" id="hosts">
+  <!-- Book Your Stay / Hosts & Contact -->
+  <section class="section" id="contact">
     <div class="container">
       <div class="section-header">
-        <h2 data-i18n="hosts.title">Your Hosts</h2>
+        <h2 data-i18n="contact.title">Book Your Stay</h2>
         <div class="divider"></div>
+        <p data-i18n="contact.subtitle">Get in touch to check availability and book directly.</p>
       </div>
-      <div class="hosts-grid">
-        <div class="host-card host-primary">
+      <div class="contact-grid">
+        <div class="contact-card">
           <div class="host-header">
             <h3>Eironwy</h3>
             <span class="host-badge" data-i18n="hosts.primary.badge">Primary Host</span>
@@ -298,49 +304,36 @@
             <li data-i18n="hosts.primary.response">Responds promptly</li>
           </ul>
           <p class="host-bio" data-i18n="hosts.primary.bio">Discovered Umbria at 17 and eventually made Sismano her adopted home. Passionate about walks, hiking, gardening, local festivals, and food. Loves the pastoral charm and warmth of the Umbrian people.</p>
+          <div class="contact-details">
+            <p class="contact-detail">
+              <span class="contact-icon">&#128222;</span>
+              <a href="tel:+447962141215">+44 07962 141215</a>
+            </p>
+            <p class="contact-detail">
+              <span class="contact-icon">&#9993;</span>
+              <a href="mailto:eironwyuk@gmail.com">eironwyuk@gmail.com</a>
+            </p>
+          </div>
         </div>
-        <div class="host-card">
+        <div class="contact-card">
           <div class="host-header">
             <h3>Jan Holland</h3>
             <span class="host-badge" data-i18n="hosts.cohost.badge">Co-host</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section section-alt" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-i18n="contact.title">Book Your Stay</h2>
-        <div class="divider"></div>
-        <p data-i18n="contact.subtitle">Get in touch to check availability and book directly.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3 data-i18n="contact.primary.label">Primary Contact</h3>
-          <p class="contact-name">Eironwy</p>
-          <p class="contact-detail">
-            <span class="contact-icon">&#128222;</span>
-            <a href="tel:+447962141215">+44 07962 141215</a>
-          </p>
-          <p class="contact-detail">
-            <span class="contact-icon">&#9993;</span>
-            <a href="mailto:eironwyuk@gmail.com">eironwyuk@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-card">
-          <h3 data-i18n="contact.alternate.label">Alternate Contact</h3>
-          <p class="contact-name">Jan Holland</p>
-          <p class="contact-detail">
-            <span class="contact-icon">&#128222;</span>
-            <a href="tel:+393450466681">+39 345 046 6681</a>
-          </p>
-          <p class="contact-detail">
-            <span class="contact-icon">&#9993;</span>
-            <a href="mailto:janholland33@gmail.com">janholland33@gmail.com</a>
-          </p>
+          <div class="contact-details">
+            <p class="contact-detail">
+              <span class="contact-icon">&#128222;</span>
+              <a href="tel:+393450466681">+39 345 046 6681</a>
+            </p>
+            <p class="contact-detail">
+              <span class="contact-icon">&#128222;</span>
+              <a href="tel:+16033137942">+1 603 313 7942</a>
+            </p>
+            <p class="contact-detail">
+              <span class="contact-icon">&#9993;</span>
+              <a href="mailto:janholland33@gmail.com">janholland33@gmail.com</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -409,12 +402,11 @@
       var panel = document.getElementById('amenities-full');
       if (!btn || !panel) return;
       btn.addEventListener('click', function () {
-        var showing = !panel.hidden;
-        panel.hidden = showing;
+        var isOpen = panel.classList.toggle('amenities-open');
         var lang = localStorage.getItem('lang') || 'en';
-        btn.textContent = showing
-          ? (lang === 'it' ? 'Mostra tutti i servizi' : 'Show all amenities')
-          : (lang === 'it' ? 'Nascondi servizi' : 'Hide amenities');
+        btn.textContent = isOpen
+          ? (lang === 'it' ? 'Nascondi servizi' : 'Hide amenities')
+          : (lang === 'it' ? 'Mostra tutti i servizi' : 'Show all amenities');
       });
     })();
   </script>

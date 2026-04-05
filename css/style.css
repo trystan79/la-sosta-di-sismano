@@ -525,9 +525,13 @@ h1, h2, h3, h4 {
 .amenities-full {
   max-width: 800px;
   margin: 2rem auto 0;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+.amenities-full.amenities-open {
+  display: grid;
 }
 
 .amenities-category h3 {
@@ -920,6 +924,12 @@ h1, h2, h3, h4 {
 
 .contact-detail a:hover {
   color: var(--terracotta-light);
+}
+
+.contact-details {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
 
