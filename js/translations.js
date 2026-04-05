@@ -1,0 +1,161 @@
+var translations = {
+  en: {
+    // Nav
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.book': 'Book Your Stay',
+
+    // Hero
+    'hero.subtitle': 'Sismano \u00b7 Umbria \u00b7 Italy',
+    'hero.title': 'La Sosta di Sismano',
+    'hero.tagline': 'A peaceful retreat in the green heart of Italy, with beautiful views across the Umbrian hills.',
+
+    // Intro
+    'intro.text': 'Nestled in the tiny medieval hamlet of Sismano, La Sosta di Sismano offers an authentic escape into the Umbrian countryside. Umbria \u2014 <span class="italian">il cuore verde d\u2019Italia</span>, the green heart of Italy \u2014 is a land of rolling hills, ancient olive groves, and vineyards stretching to the horizon. Here, time moves a little slower and every evening brings a sunset you won\u2019t forget.',
+
+    // Highlights
+    'highlights.title': 'Why La Sosta',
+    'highlights.subtitle': 'Everything you need for an unforgettable stay in the Italian countryside.',
+    'highlights.location.title': 'Location',
+    'highlights.location.text': 'Sismano sits just south of Todi, surrounded by medieval hill towns, with easy day trips to Orvieto, Assisi, Deruta, Spoleto, and even Rome.',
+    'highlights.experience.title': 'Experience',
+    'highlights.experience.text': 'Walk through olive groves, visit local wineries, browse Deruta\u2019s pottery workshops, or simply enjoy long Italian dinners under the stars.',
+    'highlights.comfort.title': 'Comfort',
+    'highlights.comfort.text': 'A thoughtfully decorated two-bedroom home for up to 4 guests, blending rustic Umbrian charm with everything you need to feel at home.',
+
+    // Gallery
+    'gallery.title': 'La Sosta',
+    'gallery.subtitle': 'A glimpse of life at La Sosta di Sismano.',
+
+    // Testimonial
+    'testimonial.count': 'from 33 reviews',
+
+    // Footer
+    'footer.explore': 'Explore',
+    'footer.book.title': 'Book Your Stay',
+    'footer.book.text': 'Get in touch to check availability and book directly.',
+    'footer.book.link': 'Contact Us \u2192',
+    'footer.rights': '\u00a9 2026 La Sosta di Sismano. All rights reserved.',
+
+    // About page
+    'about.header.title': 'About',
+    'about.header.subtitle': 'The location, the region, and everything in between.',
+
+    'about.space.title': 'The Space',
+    'about.space.p1': 'La Sosta di Sismano \u2014 \u201cthe stopping place of Sismano\u201d \u2014 is a lovingly decorated home in one of Umbria\u2019s most charming medieval hamlets. La Sosta sits within a small cluster of stone houses, steps from the medieval Castello di Sismano, whose origins date back centuries.',
+    'about.space.p2': 'With two bedrooms and room for up to 4 guests, it offers an intimate and peaceful retreat. Thick stone walls keep the interior cool in summer, while the terrace provides panoramic views across the valley \u2014 the kind of view that changes with every hour as light moves across the hills.',
+    'about.space.p3': 'This is not a hotel. It\u2019s a home \u2014 a place to slow down, cook a simple meal with local ingredients, pour a glass of Umbrian wine, and let the countryside work its quiet magic.',
+
+    'about.umbria.title': 'Umbria \u2014 The Green Heart of Italy',
+    'about.umbria.p1': 'Umbria is often called <em>il cuore verde d\u2019Italia</em> \u2014 the green heart of Italy. Landlocked and unspoiled, it\u2019s a region of soft hills, dense forests, and ancient towns perched on ridgelines. It has the beauty of Tuscany without the crowds.',
+    'about.umbria.p2': 'The landscape is defined by olive groves, vineyards, and sunflower fields that glow golden in summer. Medieval villages appear around every bend \u2014 stone streets, Romanesque churches, and piazzas where locals still gather in the evening.',
+    'about.umbria.p3': 'This is a region for those who want to experience the Italy that most tourists miss: slower, deeper, and unforgettably beautiful.',
+
+    'about.todo.title': 'Things to Do',
+    'about.todo.subtitle': 'There\u2019s no shortage of day trips and discoveries from La Sosta.',
+    'about.todi.title': 'Todi',
+    'about.todi.text': 'A perfectly preserved medieval town on a hilltop, with stunning views from Piazza del Popolo. Just 15 minutes away.',
+    'about.orvieto.title': 'Orvieto',
+    'about.orvieto.text': 'Famous for its breathtaking Gothic cathedral and underground caves. Explore, then linger over Orvieto Classico wine.',
+    'about.deruta.title': 'Deruta',
+    'about.deruta.text': 'Italy\u2019s capital of hand-painted ceramics. Browse dozens of pottery workshops and take home something truly special.',
+    'about.assisi.title': 'Assisi',
+    'about.assisi.text': 'The birthplace of St. Francis, with the magnificent Basilica and its Giotto frescoes. A place of beauty and peace.',
+    'about.wineries.title': 'Wineries',
+    'about.wineries.text': 'Sagrantino di Montefalco, Orvieto Classico, Torgiano \u2014 Umbria\u2019s wines are world-class. Many estates welcome visitors.',
+    'about.walking.title': 'Walking & Hiking',
+    'about.walking.text': 'Trails wind through olive groves and along ancient paths between villages. The countryside is yours to explore on foot.',
+    'about.food.title': 'Local Food',
+    'about.food.text': 'Truffles, fresh pasta, cured meats, local olive oil. Umbria\u2019s cuisine is hearty, seasonal, and deeply satisfying.',
+    'about.spoleto.title': 'Spoleto & Beyond',
+    'about.spoleto.text': 'Medieval Spoleto, the waterfalls at Cascata delle Marmore, and even Rome \u2014 all within comfortable day-trip distance.',
+    'about.rome.title': 'Rome Day Trip',
+    'about.rome.text': 'The Eternal City is around 90 minutes to two hours by car. Visit for the day and return to Umbrian tranquility in the evening.',
+
+    'about.getting.title': 'Getting Here',
+    'about.getting.intro': 'Sismano is located in central Umbria, just south of Todi. La Sosta is best reached by car, which also gives you the freedom to explore the region at your own pace.',
+    'about.getting.air': '<strong>By air:</strong> Rome Fiumicino (FCO) is the nearest major airport, about 1.5 hours by car. Perugia San Francesco (PEG) is closer at about 1 hour.',
+    'about.getting.car': '<strong>By car:</strong> Take the E45. Sismano is well-signed from the Todi or Acquasparta exits. A car is highly recommended for exploring Umbria.',
+    'about.getting.train': '<strong>By train:</strong> The nearest station is Terni, on the Rome\u2013Ancona line. From there it\u2019s about 30 minutes by car to Sismano.'
+  },
+
+  it: {
+    // Nav
+    'nav.home': 'Home',
+    'nav.about': 'Chi siamo',
+    'nav.book': 'Prenota il tuo soggiorno',
+
+    // Hero
+    'hero.subtitle': 'Sismano \u00b7 Umbria \u00b7 Italia',
+    'hero.title': 'La Sosta di Sismano',
+    'hero.tagline': 'Un rifugio tranquillo nel cuore verde d\u2019Italia, con splendide viste sulle colline umbre.',
+
+    // Intro
+    'intro.text': 'Immersa nel piccolo borgo medievale di Sismano, La Sosta di Sismano offre un\u2019autentica fuga nella campagna umbra. L\u2019Umbria \u2014 <span class="italian">il cuore verde d\u2019Italia</span> \u2014 \u00e8 una terra di dolci colline, antichi uliveti e vigneti che si estendono fino all\u2019orizzonte. Qui il tempo scorre pi\u00f9 lentamente e ogni sera regala un tramonto indimenticabile.',
+
+    // Highlights
+    'highlights.title': 'Perch\u00e9 La Sosta',
+    'highlights.subtitle': 'Tutto ci\u00f2 che serve per un soggiorno indimenticabile nella campagna italiana.',
+    'highlights.location.title': 'Posizione',
+    'highlights.location.text': 'Sismano si trova appena a sud di Todi, circondato da borghi medievali, con facili gite giornaliere a Orvieto, Assisi, Deruta, Spoleto e persino Roma.',
+    'highlights.experience.title': 'Esperienza',
+    'highlights.experience.text': 'Passeggia tra gli uliveti, visita le cantine locali, esplora le botteghe di ceramica di Deruta, o goditi lunghe cene italiane sotto le stelle.',
+    'highlights.comfort.title': 'Comfort',
+    'highlights.comfort.text': 'Una casa con due camere da letto curata nei dettagli per un massimo di 4 ospiti, che unisce il fascino rustico umbro a tutto il necessario per sentirsi a casa.',
+
+    // Gallery
+    'gallery.title': 'La Sosta',
+    'gallery.subtitle': 'Uno sguardo alla vita a La Sosta di Sismano.',
+
+    // Testimonial
+    'testimonial.count': 'da 33 recensioni',
+
+    // Footer
+    'footer.explore': 'Esplora',
+    'footer.book.title': 'Prenota il tuo soggiorno',
+    'footer.book.text': 'Contattaci per verificare la disponibilit\u00e0 e prenotare direttamente.',
+    'footer.book.link': 'Contattaci \u2192',
+    'footer.rights': '\u00a9 2026 La Sosta di Sismano. Tutti i diritti riservati.',
+
+    // About page
+    'about.header.title': 'Chi siamo',
+    'about.header.subtitle': 'La posizione, la regione e tutto ci\u00f2 che c\u2019\u00e8 in mezzo.',
+
+    'about.space.title': 'Lo Spazio',
+    'about.space.p1': 'La Sosta di Sismano \u2014 \u00abla sosta di Sismano\u00bb \u2014 \u00e8 una casa arredata con cura in uno dei borghi medievali pi\u00f9 affascinanti dell\u2019Umbria. La Sosta si trova in un piccolo gruppo di case in pietra, a pochi passi dal medievale Castello di Sismano, le cui origini risalgono a secoli fa.',
+    'about.space.p2': 'Con due camere da letto e spazio per un massimo di 4 ospiti, offre un rifugio intimo e tranquillo. Le spesse mura in pietra mantengono gli interni freschi d\u2019estate, mentre la terrazza offre viste panoramiche sulla valle \u2014 una vista che cambia a ogni ora con il muoversi della luce sulle colline.',
+    'about.space.p3': 'Questo non \u00e8 un hotel. \u00c8 una casa \u2014 un luogo dove rallentare, cucinare un pasto semplice con ingredienti locali, versare un bicchiere di vino umbro e lasciarsi conquistare dalla quieta magia della campagna.',
+
+    'about.umbria.title': 'Umbria \u2014 Il cuore verde d\u2019Italia',
+    'about.umbria.p1': 'L\u2019Umbria \u00e8 spesso chiamata <em>il cuore verde d\u2019Italia</em>. Senza sbocco al mare e incontaminata, \u00e8 una regione di dolci colline, fitti boschi e antichi borghi arroccati sui crinali. Ha la bellezza della Toscana senza la folla.',
+    'about.umbria.p2': 'Il paesaggio \u00e8 definito da uliveti, vigneti e campi di girasoli che brillano d\u2019oro in estate. Borghi medievali appaiono a ogni curva \u2014 strade in pietra, chiese romaniche e piazze dove la gente del posto si riunisce ancora la sera.',
+    'about.umbria.p3': 'Questa \u00e8 una regione per chi vuole vivere l\u2019Italia che la maggior parte dei turisti non conosce: pi\u00f9 lenta, pi\u00f9 profonda e di una bellezza indimenticabile.',
+
+    'about.todo.title': 'Cosa fare',
+    'about.todo.subtitle': 'Non mancano gite e scoperte partendo da La Sosta.',
+    'about.todi.title': 'Todi',
+    'about.todi.text': 'Una citt\u00e0 medievale perfettamente conservata su una collina, con viste mozzafiato da Piazza del Popolo. A soli 15 minuti.',
+    'about.orvieto.title': 'Orvieto',
+    'about.orvieto.text': 'Famosa per la sua straordinaria cattedrale gotica e le grotte sotterranee. Esplora e poi fermati per un Orvieto Classico.',
+    'about.deruta.title': 'Deruta',
+    'about.deruta.text': 'La capitale italiana della ceramica dipinta a mano. Visita decine di botteghe e porta a casa qualcosa di veramente speciale.',
+    'about.assisi.title': 'Assisi',
+    'about.assisi.text': 'La citt\u00e0 natale di San Francesco, con la magnifica Basilica e gli affreschi di Giotto. Un luogo di bellezza e pace.',
+    'about.wineries.title': 'Cantine',
+    'about.wineries.text': 'Sagrantino di Montefalco, Orvieto Classico, Torgiano \u2014 i vini dell\u2019Umbria sono di livello mondiale. Molte tenute accolgono i visitatori.',
+    'about.walking.title': 'Passeggiate ed escursioni',
+    'about.walking.text': 'Sentieri che si snodano tra uliveti e antichi percorsi tra i borghi. La campagna \u00e8 tutta da esplorare a piedi.',
+    'about.food.title': 'Cucina locale',
+    'about.food.text': 'Tartufi, pasta fresca, salumi, olio d\u2019oliva locale. La cucina umbra \u00e8 sostanziosa, stagionale e profondamente appagante.',
+    'about.spoleto.title': 'Spoleto e dintorni',
+    'about.spoleto.text': 'La medievale Spoleto, le cascate delle Marmore e persino Roma \u2014 tutto a portata di gita giornaliera.',
+    'about.rome.title': 'Gita a Roma',
+    'about.rome.text': 'La Citt\u00e0 Eterna \u00e8 a circa 90 minuti\u20132 ore di auto. Visita per la giornata e torna alla tranquillit\u00e0 umbra la sera.',
+
+    'about.getting.title': 'Come arrivare',
+    'about.getting.intro': 'Sismano si trova nell\u2019Umbria centrale, appena a sud di Todi. La Sosta si raggiunge meglio in auto, il che consente anche la libert\u00e0 di esplorare la regione al proprio ritmo.',
+    'about.getting.air': '<strong>In aereo:</strong> Roma Fiumicino (FCO) \u00e8 l\u2019aeroporto principale pi\u00f9 vicino, a circa 1,5 ore di auto. Perugia San Francesco (PEG) \u00e8 pi\u00f9 vicino, a circa 1 ora.',
+    'about.getting.car': '<strong>In auto:</strong> Prendi la E45. Sismano \u00e8 ben segnalato dalle uscite di Todi o Acquasparta. L\u2019auto \u00e8 altamente raccomandata per esplorare l\u2019Umbria.',
+    'about.getting.train': '<strong>In treno:</strong> La stazione pi\u00f9 vicina \u00e8 Terni, sulla linea Roma\u2013Ancona. Da l\u00ec circa 30 minuti di auto fino a Sismano.'
+  }
+};

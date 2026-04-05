@@ -16,28 +16,34 @@
   <nav class="nav">
     <div class="container">
       <a href="index.html" class="nav-logo">La Sosta di Sismano</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#contact" class="nav-cta">Book Your Stay</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="#contact" class="nav-cta" data-i18n="nav.book">Book Your Stay</a></li>
+        </ul>
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en" aria-label="Switch to English">&#127468;&#127463;</button>
+          <button class="lang-btn" data-lang="it" aria-label="Passa all'italiano">&#127470;&#127481;</button>
+        </div>
+      </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero has-image">
     <div class="hero-content">
-      <p class="hero-subtitle">Sismano &middot; Umbria &middot; Italy</p>
-      <h1>La Sosta di Sismano</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Sismano &middot; Umbria &middot; Italy</p>
+      <h1 data-i18n="hero.title">La Sosta di Sismano</h1>
       <div class="hero-divider"></div>
-      <p class="hero-tagline">A peaceful retreat in the green heart of Italy, with beautiful views across the Umbrian hills.</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">A peaceful retreat in the green heart of Italy, with beautiful views across the Umbrian hills.</p>
     </div>
   </section>
 
   <!-- Introduction -->
   <section class="section">
     <div class="container">
-      <p class="intro-text">
+      <p class="intro-text" data-i18n="intro.text">
         Nestled in the tiny medieval hamlet of Sismano, La Sosta di Sismano offers an authentic escape into the Umbrian countryside. Umbria — <span class="italian">il cuore verde d'Italia</span>, the green heart of Italy — is a land of rolling hills, ancient olive groves, and vineyards stretching to the horizon. Here, time moves a little slower and every evening brings a sunset you won't forget.
       </p>
     </div>
@@ -47,25 +53,25 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2>Why La Sosta</h2>
+        <h2 data-i18n="highlights.title">Why La Sosta</h2>
         <div class="divider"></div>
-        <p>Everything you need for an unforgettable stay in the Italian countryside.</p>
+        <p data-i18n="highlights.subtitle">Everything you need for an unforgettable stay in the Italian countryside.</p>
       </div>
       <div class="highlights-grid">
         <div class="highlight-card">
           <div class="highlight-icon">&#9962;</div>
-          <h3>Location</h3>
-          <p>Sismano sits just south of Todi, surrounded by medieval hill towns, with easy day trips to Orvieto, Assisi, Deruta, Spoleto, and even Rome.</p>
+          <h3 data-i18n="highlights.location.title">Location</h3>
+          <p data-i18n="highlights.location.text">Sismano sits just south of Todi, surrounded by medieval hill towns, with easy day trips to Orvieto, Assisi, Deruta, Spoleto, and even Rome.</p>
         </div>
         <div class="highlight-card">
           <div class="highlight-icon">&#127860;</div>
-          <h3>Experience</h3>
-          <p>Walk through olive groves, visit local wineries, browse Deruta's pottery workshops, or simply enjoy long Italian dinners under the stars.</p>
+          <h3 data-i18n="highlights.experience.title">Experience</h3>
+          <p data-i18n="highlights.experience.text">Walk through olive groves, visit local wineries, browse Deruta's pottery workshops, or simply enjoy long Italian dinners under the stars.</p>
         </div>
         <div class="highlight-card">
           <div class="highlight-icon">&#127969;</div>
-          <h3>Comfort</h3>
-          <p>A thoughtfully decorated two-bedroom home for up to 4 guests, blending rustic Umbrian charm with everything you need to feel at home.</p>
+          <h3 data-i18n="highlights.comfort.title">Comfort</h3>
+          <p data-i18n="highlights.comfort.text">A thoughtfully decorated two-bedroom home for up to 4 guests, blending rustic Umbrian charm with everything you need to feel at home.</p>
         </div>
       </div>
     </div>
@@ -75,9 +81,9 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>La Sosta</h2>
+        <h2 data-i18n="gallery.title">La Sosta</h2>
         <div class="divider"></div>
-        <p>A glimpse of life at La Sosta di Sismano.</p>
+        <p data-i18n="gallery.subtitle">A glimpse of life at La Sosta di Sismano.</p>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
@@ -107,7 +113,7 @@
     <div class="container">
       <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <div class="testimonial-rating">4.97 / 5</div>
-      <p class="testimonial-count">from 33 reviews</p>
+      <p class="testimonial-count" data-i18n="testimonial.count">from 33 reviews</p>
     </div>
   </section>
 
@@ -120,23 +126,25 @@
           <p>Sismano, Terni<br>Umbria, Italy</p>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h4 data-i18n="footer.explore">Explore</h4>
           <p>
-            <a href="index.html">Home</a><br>
-            <a href="about.html">About</a>
+            <a href="index.html" data-i18n="nav.home">Home</a><br>
+            <a href="about.html" data-i18n="nav.about">About</a>
           </p>
         </div>
         <div>
-          <h4>Book Your Stay</h4>
-          <p>Get in touch to check availability and book directly.</p>
-          <a href="#contact" class="footer-cta-link">Contact Us &rarr;</a>
+          <h4 data-i18n="footer.book.title">Book Your Stay</h4>
+          <p data-i18n="footer.book.text">Get in touch to check availability and book directly.</p>
+          <a href="#contact" class="footer-cta-link" data-i18n="footer.book.link">Contact Us &rarr;</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-bottom" data-i18n="footer.rights">
         &copy; 2026 La Sosta di Sismano. All rights reserved.
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

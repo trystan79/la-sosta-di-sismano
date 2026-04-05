@@ -16,22 +16,28 @@
   <nav class="nav">
     <div class="container">
       <a href="index.html" class="nav-logo">La Sosta di Sismano</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Book Your Stay</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="active" data-i18n="nav.about">About</a></li>
+          <li><a href="index.html#contact" class="nav-cta" data-i18n="nav.book">Book Your Stay</a></li>
+        </ul>
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en" aria-label="Switch to English">&#127468;&#127463;</button>
+          <button class="lang-btn" data-lang="it" aria-label="Passa all'italiano">&#127470;&#127481;</button>
+        </div>
+      </div>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header">
-    <h1>About</h1>
+    <h1 data-i18n="about.header.title">About</h1>
     <div class="divider"></div>
-    <p>The location, the region, and everything in between.</p>
+    <p data-i18n="about.header.subtitle">The location, the region, and everything in between.</p>
   </header>
 
-  <!-- About the Villa -->
+  <!-- About the Space -->
   <section class="section">
     <div class="container">
       <div class="about-section">
@@ -39,11 +45,11 @@
           <img src="images/about-villa.jpg" alt="La Sosta di Sismano garden with vine-covered pergola">
         </div>
         <div class="about-text">
-          <h2>The Space</h2>
+          <h2 data-i18n="about.space.title">The Space</h2>
           <div class="divider"></div>
-          <p>La Sosta di Sismano — "the stopping place of Sismano" — is a lovingly decorated home in one of Umbria's most charming medieval hamlets. La Sosta sits within a small cluster of stone houses, steps from the medieval Castello di Sismano, whose origins date back centuries.</p>
-          <p>With two bedrooms and room for up to 4 guests, it offers an intimate and peaceful retreat. Thick stone walls keep the interior cool in summer, while the terrace provides panoramic views across the valley — the kind of view that changes with every hour as light moves across the hills.</p>
-          <p>This is not a hotel. It's a home — a place to slow down, cook a simple meal with local ingredients, pour a glass of Umbrian wine, and let the countryside work its quiet magic.</p>
+          <p data-i18n="about.space.p1">La Sosta di Sismano — "the stopping place of Sismano" — is a lovingly decorated home in one of Umbria's most charming medieval hamlets. La Sosta sits within a small cluster of stone houses, steps from the medieval Castello di Sismano, whose origins date back centuries.</p>
+          <p data-i18n="about.space.p2">With two bedrooms and room for up to 4 guests, it offers an intimate and peaceful retreat. Thick stone walls keep the interior cool in summer, while the terrace provides panoramic views across the valley — the kind of view that changes with every hour as light moves across the hills.</p>
+          <p data-i18n="about.space.p3">This is not a hotel. It's a home — a place to slow down, cook a simple meal with local ingredients, pour a glass of Umbrian wine, and let the countryside work its quiet magic.</p>
         </div>
       </div>
     </div>
@@ -57,11 +63,11 @@
           <img src="images/villa-6.jpg" alt="View across the Umbrian hills from Sismano">
         </div>
         <div class="about-text">
-          <h2>Umbria — The Green Heart of Italy</h2>
+          <h2 data-i18n="about.umbria.title">Umbria — The Green Heart of Italy</h2>
           <div class="divider"></div>
-          <p>Umbria is often called <em>il cuore verde d'Italia</em> — the green heart of Italy. Landlocked and unspoiled, it's a region of soft hills, dense forests, and ancient towns perched on ridgelines. It has the beauty of Tuscany without the crowds.</p>
-          <p>The landscape is defined by olive groves, vineyards, and sunflower fields that glow golden in summer. Medieval villages appear around every bend — stone streets, Romanesque churches, and piazzas where locals still gather in the evening.</p>
-          <p>This is a region for those who want to experience the Italy that most tourists miss: slower, deeper, and unforgettably beautiful.</p>
+          <p data-i18n="about.umbria.p1">Umbria is often called <em>il cuore verde d'Italia</em> — the green heart of Italy. Landlocked and unspoiled, it's a region of soft hills, dense forests, and ancient towns perched on ridgelines. It has the beauty of Tuscany without the crowds.</p>
+          <p data-i18n="about.umbria.p2">The landscape is defined by olive groves, vineyards, and sunflower fields that glow golden in summer. Medieval villages appear around every bend — stone streets, Romanesque churches, and piazzas where locals still gather in the evening.</p>
+          <p data-i18n="about.umbria.p3">This is a region for those who want to experience the Italy that most tourists miss: slower, deeper, and unforgettably beautiful.</p>
         </div>
       </div>
     </div>
@@ -71,72 +77,72 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Things to Do</h2>
+        <h2 data-i18n="about.todo.title">Things to Do</h2>
         <div class="divider"></div>
-        <p>There's no shortage of day trips and discoveries from La Sosta.</p>
+        <p data-i18n="about.todo.subtitle">There's no shortage of day trips and discoveries from La Sosta.</p>
       </div>
       <div class="things-grid">
         <div class="thing-card">
           <div class="thing-icon">&#127963;</div>
           <div>
-            <h3>Todi</h3>
-            <p>A perfectly preserved medieval town on a hilltop, with stunning views from Piazza del Popolo. Just 15 minutes away.</p>
+            <h3 data-i18n="about.todi.title">Todi</h3>
+            <p data-i18n="about.todi.text">A perfectly preserved medieval town on a hilltop, with stunning views from Piazza del Popolo. Just 15 minutes away.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#9962;</div>
           <div>
-            <h3>Orvieto</h3>
-            <p>Famous for its breathtaking Gothic cathedral and underground caves. Explore, then linger over Orvieto Classico wine.</p>
+            <h3 data-i18n="about.orvieto.title">Orvieto</h3>
+            <p data-i18n="about.orvieto.text">Famous for its breathtaking Gothic cathedral and underground caves. Explore, then linger over Orvieto Classico wine.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#127912;</div>
           <div>
-            <h3>Deruta</h3>
-            <p>Italy's capital of hand-painted ceramics. Browse dozens of pottery workshops and take home something truly special.</p>
+            <h3 data-i18n="about.deruta.title">Deruta</h3>
+            <p data-i18n="about.deruta.text">Italy's capital of hand-painted ceramics. Browse dozens of pottery workshops and take home something truly special.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#128332;</div>
           <div>
-            <h3>Assisi</h3>
-            <p>The birthplace of St. Francis, with the magnificent Basilica and its Giotto frescoes. A place of beauty and peace.</p>
+            <h3 data-i18n="about.assisi.title">Assisi</h3>
+            <p data-i18n="about.assisi.text">The birthplace of St. Francis, with the magnificent Basilica and its Giotto frescoes. A place of beauty and peace.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#127863;</div>
           <div>
-            <h3>Wineries</h3>
-            <p>Sagrantino di Montefalco, Orvieto Classico, Torgiano — Umbria's wines are world-class. Many estates welcome visitors.</p>
+            <h3 data-i18n="about.wineries.title">Wineries</h3>
+            <p data-i18n="about.wineries.text">Sagrantino di Montefalco, Orvieto Classico, Torgiano — Umbria's wines are world-class. Many estates welcome visitors.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#128694;</div>
           <div>
-            <h3>Walking &amp; Hiking</h3>
-            <p>Trails wind through olive groves and along ancient paths between villages. The countryside is yours to explore on foot.</p>
+            <h3 data-i18n="about.walking.title">Walking &amp; Hiking</h3>
+            <p data-i18n="about.walking.text">Trails wind through olive groves and along ancient paths between villages. The countryside is yours to explore on foot.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#127849;</div>
           <div>
-            <h3>Local Food</h3>
-            <p>Truffles, fresh pasta, cured meats, local olive oil. Umbria's cuisine is hearty, seasonal, and deeply satisfying.</p>
+            <h3 data-i18n="about.food.title">Local Food</h3>
+            <p data-i18n="about.food.text">Truffles, fresh pasta, cured meats, local olive oil. Umbria's cuisine is hearty, seasonal, and deeply satisfying.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#128652;</div>
           <div>
-            <h3>Spoleto &amp; Beyond</h3>
-            <p>Medieval Spoleto, the waterfalls at Cascata delle Marmore, and even Rome — all within comfortable day-trip distance.</p>
+            <h3 data-i18n="about.spoleto.title">Spoleto &amp; Beyond</h3>
+            <p data-i18n="about.spoleto.text">Medieval Spoleto, the waterfalls at Cascata delle Marmore, and even Rome — all within comfortable day-trip distance.</p>
           </div>
         </div>
         <div class="thing-card">
           <div class="thing-icon">&#127965;</div>
           <div>
-            <h3>Rome Day Trip</h3>
-            <p>The Eternal City is around 90 minutes to two hours by car. Visit for the day and return to Umbrian tranquility in the evening.</p>
+            <h3 data-i18n="about.rome.title">Rome Day Trip</h3>
+            <p data-i18n="about.rome.text">The Eternal City is around 90 minutes to two hours by car. Visit for the day and return to Umbrian tranquility in the evening.</p>
           </div>
         </div>
       </div>
@@ -147,23 +153,23 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <h2>Getting Here</h2>
+        <h2 data-i18n="about.getting.title">Getting Here</h2>
         <div class="divider"></div>
       </div>
       <div class="getting-here">
-        <p>Sismano is located in central Umbria, just south of Todi. La Sosta is best reached by car, which also gives you the freedom to explore the region at your own pace.</p>
+        <p data-i18n="about.getting.intro">Sismano is located in central Umbria, just south of Todi. La Sosta is best reached by car, which also gives you the freedom to explore the region at your own pace.</p>
         <ul class="travel-options">
           <li>
             <span class="travel-icon">&#9992;</span>
-            <span><strong>By air:</strong> Rome Fiumicino (FCO) is the nearest major airport, about 1.5 hours by car. Perugia San Francesco (PEG) is closer at about 1 hour.</span>
+            <span data-i18n="about.getting.air"><strong>By air:</strong> Rome Fiumicino (FCO) is the nearest major airport, about 1.5 hours by car. Perugia San Francesco (PEG) is closer at about 1 hour.</span>
           </li>
           <li>
             <span class="travel-icon">&#128665;</span>
-            <span><strong>By car:</strong> Take the E45. Sismano is well-signed from the Todi or Acquasparta exits. A car is highly recommended for exploring Umbria.</span>
+            <span data-i18n="about.getting.car"><strong>By car:</strong> Take the E45. Sismano is well-signed from the Todi or Acquasparta exits. A car is highly recommended for exploring Umbria.</span>
           </li>
           <li>
             <span class="travel-icon">&#128646;</span>
-            <span><strong>By train:</strong> The nearest station is Terni, on the Rome–Ancona line. From there it's about 30 minutes by car to Sismano.</span>
+            <span data-i18n="about.getting.train"><strong>By train:</strong> The nearest station is Terni, on the Rome–Ancona line. From there it's about 30 minutes by car to Sismano.</span>
           </li>
         </ul>
       </div>
@@ -179,23 +185,25 @@
           <p>Sismano, Terni<br>Umbria, Italy</p>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h4 data-i18n="footer.explore">Explore</h4>
           <p>
-            <a href="index.html">Home</a><br>
-            <a href="about.html">About</a>
+            <a href="index.html" data-i18n="nav.home">Home</a><br>
+            <a href="about.html" data-i18n="nav.about">About</a>
           </p>
         </div>
         <div>
-          <h4>Book Your Stay</h4>
-          <p>Get in touch to check availability and book directly.</p>
-          <a href="index.html#contact" class="footer-cta-link">Contact Us &rarr;</a>
+          <h4 data-i18n="footer.book.title">Book Your Stay</h4>
+          <p data-i18n="footer.book.text">Get in touch to check availability and book directly.</p>
+          <a href="index.html#contact" class="footer-cta-link" data-i18n="footer.book.link">Contact Us &rarr;</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-bottom" data-i18n="footer.rights">
         &copy; 2026 La Sosta di Sismano. All rights reserved.
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>
