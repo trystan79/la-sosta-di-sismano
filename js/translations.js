@@ -30,6 +30,15 @@ var translations = {
     // Testimonial
     'testimonial.count': 'from 33 reviews',
 
+    // Hosts
+    'hosts.title': 'Your Hosts',
+    'hosts.primary.badge': 'Primary Host',
+    'hosts.primary.since': 'Hosting since 2015 (11 years)',
+    'hosts.primary.languages': 'Speaks English, Italian, and Spanish',
+    'hosts.primary.response': 'Responds promptly',
+    'hosts.primary.bio': 'Discovered Umbria at 17 and eventually made Sismano her adopted home. Passionate about walks, hiking, gardening, local festivals, and food. Loves the pastoral charm and warmth of the Umbrian people.',
+    'hosts.cohost.badge': 'Co-host',
+
     // Footer
     'footer.explore': 'Explore',
     'footer.book.title': 'Book Your Stay',
@@ -109,6 +118,15 @@ var translations = {
 
     // Testimonial
     'testimonial.count': 'da 33 recensioni',
+
+    // Hosts
+    'hosts.title': 'I vostri host',
+    'hosts.primary.badge': 'Host',
+    'hosts.primary.since': 'Ospita dal 2015 (11 anni)',
+    'hosts.primary.languages': 'Parla inglese, italiano e spagnolo',
+    'hosts.primary.response': 'Risponde rapidamente',
+    'hosts.primary.bio': 'Ha scoperto l\u2019Umbria a 17 anni e ha finito per fare di Sismano la sua casa d\u2019adozione. Appassionata di passeggiate, escursioni, giardinaggio, sagre paesane e buona cucina. Ama il fascino rurale e il calore della gente umbra.',
+    'hosts.cohost.badge': 'Co-host',
 
     // Footer
     'footer.explore': 'Esplora',

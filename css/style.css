@@ -447,6 +447,66 @@ h1, h2, h3, h4 {
 }
 
 
+/* --- Host Section --- */
+.hosts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.host-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.host-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.host-header h3 {
+  font-size: 1.4rem;
+}
+
+.host-badge {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  border: 1px solid var(--terracotta);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.host-details {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.host-details li {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.host-details li:last-child {
+  border-bottom: none;
+}
+
+.host-bio {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+
 /* --- About Page Sections --- */
 .about-section {
   display: grid;
@@ -699,6 +759,10 @@ h1, h2, h3, h4 {
 
   .footer-content {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hosts-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
