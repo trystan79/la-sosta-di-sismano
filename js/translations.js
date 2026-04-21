@@ -110,17 +110,21 @@ var translations = {
     'hosts.primary.bio': 'Discovered Umbria at 17 and eventually made Sismano her adopted home. Passionate about walks, hiking, gardening, local festivals, and food. Loves the pastoral charm and warmth of the Umbrian people.',
     'hosts.cohost.badge': 'Co-host',
 
+    // Booking
+    'booking.title': 'Check Availability',
+    'booking.subtitle': 'Choose your dates and guests, then book securely through Lodgify.',
+
     // Contact
-    'contact.title': 'Book Your Stay',
-    'contact.subtitle': 'Get in touch to check availability and book directly.',
+    'contact.title': 'Questions Before Booking?',
+    'contact.subtitle': 'Get in touch if you have questions or prefer to speak directly.',
     'contact.primary.label': 'Primary Contact',
     'contact.alternate.label': 'Alternate Contact',
 
     // Footer
     'footer.explore': 'Explore',
     'footer.book.title': 'Book Your Stay',
-    'footer.book.text': 'Get in touch to check availability and book directly.',
-    'footer.book.link': 'Contact Us \u2192',
+    'footer.book.text': 'Check availability and book securely online.',
+    'footer.book.link': 'Check Availability \u2192',
     'footer.rights': '\u00a9 2026 La Sosta di Sismano. All rights reserved.',
 
     // About page
@@ -276,17 +280,21 @@ var translations = {
     'hosts.primary.bio': 'Ha scoperto l\u2019Umbria a 17 anni e ha finito per fare di Sismano la sua casa d\u2019adozione. Appassionata di passeggiate, escursioni, giardinaggio, sagre paesane e buona cucina. Ama il fascino rurale e il calore della gente umbra.',
     'hosts.cohost.badge': 'Co-host',
 
+    // Booking
+    'booking.title': 'Verifica disponibilit\u00e0',
+    'booking.subtitle': 'Scegli date e ospiti, poi prenota in modo sicuro tramite Lodgify.',
+
     // Contact
-    'contact.title': 'Prenota il tuo soggiorno',
-    'contact.subtitle': 'Contattaci per verificare la disponibilit\u00e0 e prenotare direttamente.',
+    'contact.title': 'Domande prima di prenotare?',
+    'contact.subtitle': 'Contattaci se hai domande o preferisci parlare direttamente.',
     'contact.primary.label': 'Contatto principale',
     'contact.alternate.label': 'Contatto alternativo',
 
     // Footer
     'footer.explore': 'Esplora',
     'footer.book.title': 'Prenota il tuo soggiorno',
-    'footer.book.text': 'Contattaci per verificare la disponibilit\u00e0 e prenotare direttamente.',
-    'footer.book.link': 'Contattaci \u2192',
+    'footer.book.text': 'Verifica la disponibilit\u00e0 e prenota online in modo sicuro.',
+    'footer.book.link': 'Verifica disponibilit\u00e0 \u2192',
     'footer.rights': '\u00a9 2026 La Sosta di Sismano. Tutti i diritti riservati.',
 
     // About page

@@ -20,7 +20,7 @@
         <ul class="nav-links">
           <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
           <li><a href="about.html" data-i18n="nav.about">About</a></li>
-          <li><a href="#contact" class="nav-cta" data-i18n="nav.book">Book Your Stay</a></li>
+          <li><a href="#book-now" class="nav-cta" data-i18n="nav.book">Book Your Stay</a></li>
         </ul>
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en" aria-label="Switch to English">&#127468;&#127463;</button>
@@ -46,6 +46,52 @@
       <p class="intro-text" data-i18n="intro.text">
         Nestled in the tiny medieval hamlet of Sismano, La Sosta di Sismano offers an authentic escape into the Umbrian countryside. Umbria — <span class="italian">il cuore verde d'Italia</span>, the green heart of Italy — is a land of rolling hills, ancient olive groves, and vineyards stretching to the horizon. Here, time moves a little slower and every evening brings a sunset you won't forget.
       </p>
+    </div>
+  </section>
+
+  <!-- Book Now -->
+  <section class="section section-alt booking-section" id="book-now">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="booking.title">Check Availability</h2>
+        <div class="divider"></div>
+        <p data-i18n="booking.subtitle">Choose your dates and guests, then book securely through Lodgify.</p>
+      </div>
+      <div class="booking-widget">
+        <div
+          id="lodgify-book-now-box"
+          data-rental-id="792152"
+          data-website-id="648838"
+          data-slug="eironwy-de-mallet-morgan"
+          data-language-code="en"
+          data-new-tab="true"
+          data-version="stable"
+          data-has-guests-breakdown
+          data-check-in-label='Check-in'
+          data-check-out-label='Check-out'
+          data-guests-label='Guests'
+          data-guests-singular-label='{{NumberOfGuests}} guest'
+          data-guests-plural-label='{{NumberOfGuests}} guests'
+          data-location-input-label='Location'
+          data-total-price-label='Total price:'
+          data-select-dates-to-see-price-label='Select dates to see total price'
+          data-minimum-price-per-night-first-label='From'
+          data-minimum-price-per-night-second-label='per night'
+          data-book-button-label='Book Now'
+          data-guests-breakdown-label='Guests'
+          data-adults-label='{"one":"adult","other":"adults"}'
+          data-adults-description='Ages {minAge} or above'
+          data-children-label='{"one":"child","other":"children"}'
+          data-children-description='Ages {minAge}-{maxAge}'
+          data-children-not-allowed-label='Not suitable for children'
+          data-infants-label='{"one":"infant","other":"infants"}'
+          data-infants-description='Under {maxAge}'
+          data-infants-not-allowed-label='Not suitable for infants'
+          data-pets-label='{"one":"pet","other":"pets"}'
+          data-pets-not-allowed-label='Not allowed'
+          data-done-label='Done'
+        ></div>
+      </div>
     </div>
   </section>
 
@@ -284,13 +330,13 @@
     </div>
   </section>
 
-  <!-- Book Your Stay / Hosts & Contact -->
+  <!-- Hosts & Contact -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section-header">
-        <h2 data-i18n="contact.title">Book Your Stay</h2>
+        <h2 data-i18n="contact.title">Questions Before Booking?</h2>
         <div class="divider"></div>
-        <p data-i18n="contact.subtitle">Get in touch to check availability and book directly.</p>
+        <p data-i18n="contact.subtitle">Get in touch if you have questions or prefer to speak directly.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-card">
@@ -384,8 +430,8 @@
         </div>
         <div>
           <h4 data-i18n="footer.book.title">Book Your Stay</h4>
-          <p data-i18n="footer.book.text">Get in touch to check availability and book directly.</p>
-          <a href="#contact" class="footer-cta-link" data-i18n="footer.book.link">Contact Us &rarr;</a>
+          <p data-i18n="footer.book.text">Check availability and book securely online.</p>
+          <a href="#book-now" class="footer-cta-link" data-i18n="footer.book.link">Check Availability &rarr;</a>
         </div>
       </div>
       <div class="footer-bottom" data-i18n="footer.rights">
@@ -396,5 +442,6 @@
 
   <script src="js/translations.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
 </body>
 </html>

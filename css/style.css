@@ -24,6 +24,21 @@
   --text: #4a3728;
   --text-light: #7a6555;
   --border: #e8ddd0;
+  --ldg-bnb-background: #ffffff;
+  --ldg-bnb-border-radius: 0.42em;
+  --ldg-bnb-box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.1);
+  --ldg-bnb-padding: 14px;
+  --ldg-bnb-input-background: #ffffff;
+  --ldg-bnb-button-border-radius: 3.58em;
+  --ldg-bnb-color-primary: #fac600;
+  --ldg-bnb-color-primary-lighter: #fde380;
+  --ldg-bnb-color-primary-darker: #7d6300;
+  --ldg-bnb-color-primary-contrast: #333333;
+  --ldg-component-calendar-cell-selection-bg-color: #fac600;
+  --ldg-component-calendar-cell-selection-color: #333333;
+  --ldg-component-calendar-cell-selected-bg-color: #fde380;
+  --ldg-component-calendar-cell-selected-color: #333333;
+  --ldg-bnb-font-family: inherit;
 }
 
 html {
@@ -316,6 +331,21 @@ h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   color: var(--terracotta);
+}
+
+
+/* --- Booking Widget --- */
+#book-now {
+  scroll-margin-top: 96px;
+}
+
+.booking-widget {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+#lodgify-book-now-box {
+  width: 100%;
 }
 
 
