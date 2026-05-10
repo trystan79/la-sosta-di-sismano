@@ -111,8 +111,21 @@ var translations = {
     'hosts.cohost.badge': 'Co-host',
 
     // Booking
-    'booking.title': 'Check Availability',
-    'booking.subtitle': 'Choose your dates and guests, then book securely through Lodgify.',
+    'booking.title': 'Enquire About Your Stay',
+    'booking.subtitle': 'Tell us your dates and we\'ll confirm availability and pricing within hours.',
+    'booking.checkin': 'Check-in',
+    'booking.checkout': 'Check-out',
+    'booking.guests': 'Guests',
+    'booking.name': 'Your name',
+    'booking.message': 'Message',
+    'booking.optional': '(optional)',
+    'booking.message.placeholder': 'Anything we should know? Special occasions, questions, etc.',
+    'booking.sendto': 'Send your enquiry to:',
+    'booking.host.primary': 'Primary host',
+    'booking.host.cohost': 'Co-host',
+    'booking.whatsapp': 'WhatsApp',
+    'booking.email': 'Email',
+    'booking.note': 'No payment is taken now &mdash; we\'ll confirm dates, pricing, and next steps.',
 
     // Contact
     'contact.title': 'Questions Before Booking?',
@@ -123,8 +136,8 @@ var translations = {
     // Footer
     'footer.explore': 'Explore',
     'footer.book.title': 'Book Your Stay',
-    'footer.book.text': 'Check availability and book securely online.',
-    'footer.book.link': 'Check Availability \u2192',
+    'footer.book.text': 'Send an enquiry by WhatsApp or email \u2014 we reply quickly.',
+    'footer.book.link': 'Enquire Now \u2192',
     'footer.rights': '\u00a9 2026 La Sosta di Sismano. All rights reserved.',
 
     // About page
@@ -281,8 +294,21 @@ var translations = {
     'hosts.cohost.badge': 'Co-host',
 
     // Booking
-    'booking.title': 'Verifica disponibilit\u00e0',
-    'booking.subtitle': 'Scegli date e ospiti, poi prenota in modo sicuro tramite Lodgify.',
+    'booking.title': 'Richiedi informazioni',
+    'booking.subtitle': 'Indicaci le tue date e ti confermeremo disponibilit\u00e0 e prezzo entro poche ore.',
+    'booking.checkin': 'Check-in',
+    'booking.checkout': 'Check-out',
+    'booking.guests': 'Ospiti',
+    'booking.name': 'Il tuo nome',
+    'booking.message': 'Messaggio',
+    'booking.optional': '(facoltativo)',
+    'booking.message.placeholder': 'Qualcosa che dovremmo sapere? Occasioni speciali, domande, ecc.',
+    'booking.sendto': 'Invia la tua richiesta a:',
+    'booking.host.primary': 'Host principale',
+    'booking.host.cohost': 'Co-host',
+    'booking.whatsapp': 'WhatsApp',
+    'booking.email': 'Email',
+    'booking.note': 'Nessun pagamento richiesto ora &mdash; ti confermeremo date, prezzo e prossimi passi.',
 
     // Contact
     'contact.title': 'Domande prima di prenotare?',
@@ -293,8 +319,8 @@ var translations = {
     // Footer
     'footer.explore': 'Esplora',
     'footer.book.title': 'Prenota il tuo soggiorno',
-    'footer.book.text': 'Verifica la disponibilit\u00e0 e prenota online in modo sicuro.',
-    'footer.book.link': 'Verifica disponibilit\u00e0 \u2192',
+    'footer.book.text': 'Inviaci una richiesta su WhatsApp o email \u2014 rispondiamo rapidamente.',
+    'footer.book.link': 'Richiedi informazioni \u2192',
     'footer.rights': '\u00a9 2026 La Sosta di Sismano. Tutti i diritti riservati.',
 
     // About page

@@ -340,12 +340,209 @@ h1, h2, h3, h4 {
 }
 
 .booking-widget {
-  max-width: 980px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
-#lodgify-book-now-box {
-  width: 100%;
+.enquiry-form {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(59, 35, 20, 0.05);
+}
+
+.enquiry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.field-optional {
+  font-weight: 400;
+  color: var(--text-light);
+  margin-left: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent, #7a5a3a);
+  box-shadow: 0 0 0 3px rgba(122, 90, 58, 0.15);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.enquiry-send-label {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.enquiry-hosts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.enquiry-host {
+  background-color: var(--bg, #faf7f2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.enquiry-host-name {
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.enquiry-host-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  background-color: var(--white);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.enquiry-host-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-enquire {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  border: 1px solid transparent;
+  min-width: 0;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.btn-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-detail {
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.85;
+  letter-spacing: 0.01em;
+  margin-top: 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.btn-enquire:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 35, 20, 0.12);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5a;
+}
+
+.btn-email {
+  background-color: var(--white);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-email:hover {
+  background-color: var(--bg, #faf7f2);
+}
+
+.btn-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.enquiry-note {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 600px) {
+  .enquiry-form {
+    padding: 1.5rem 1.25rem;
+  }
+  .enquiry-grid {
+    grid-template-columns: 1fr;
+  }
+  .enquiry-hosts {
+    grid-template-columns: 1fr;
+  }
 }
 
 

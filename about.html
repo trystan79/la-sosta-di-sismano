@@ -186,44 +186,86 @@
   <section class="section booking-section" id="book-now">
     <div class="container">
       <div class="section-header">
-        <h2 data-i18n="booking.title">Check Availability</h2>
+        <h2 data-i18n="booking.title">Enquire About Your Stay</h2>
         <div class="divider"></div>
-        <p data-i18n="booking.subtitle">Choose your dates and guests, then book securely through Lodgify.</p>
+        <p data-i18n="booking.subtitle">Tell us your dates and we'll confirm availability and pricing within hours.</p>
       </div>
       <div class="booking-widget">
-        <div
-          id="lodgify-book-now-box"
-          data-rental-id="792152"
-          data-website-id="648838"
-          data-slug="eironwy-de-mallet-morgan"
-          data-language-code="en"
-          data-new-tab="true"
-          data-version="stable"
-          data-has-guests-breakdown
-          data-check-in-label='Check-in'
-          data-check-out-label='Check-out'
-          data-guests-label='Guests'
-          data-guests-singular-label='{{NumberOfGuests}} guest'
-          data-guests-plural-label='{{NumberOfGuests}} guests'
-          data-location-input-label='Location'
-          data-total-price-label='Total price:'
-          data-select-dates-to-see-price-label='Select dates to see total price'
-          data-minimum-price-per-night-first-label='From'
-          data-minimum-price-per-night-second-label='per night'
-          data-book-button-label='Book Now'
-          data-guests-breakdown-label='Guests'
-          data-adults-label='{"one":"adult","other":"adults"}'
-          data-adults-description='Ages {minAge} or above'
-          data-children-label='{"one":"child","other":"children"}'
-          data-children-description='Ages {minAge}-{maxAge}'
-          data-children-not-allowed-label='Not suitable for children'
-          data-infants-label='{"one":"infant","other":"infants"}'
-          data-infants-description='Under {maxAge}'
-          data-infants-not-allowed-label='Not suitable for infants'
-          data-pets-label='{"one":"pet","other":"pets"}'
-          data-pets-not-allowed-label='Not allowed'
-          data-done-label='Done'
-        ></div>
+        <form class="enquiry-form" id="enquiry-form" novalidate>
+          <div class="enquiry-grid">
+            <div class="field">
+              <label for="enq-checkin" data-i18n="booking.checkin">Check-in</label>
+              <input type="date" id="enq-checkin" name="checkin" required>
+            </div>
+            <div class="field">
+              <label for="enq-checkout" data-i18n="booking.checkout">Check-out</label>
+              <input type="date" id="enq-checkout" name="checkout" required>
+            </div>
+            <div class="field">
+              <label for="enq-guests" data-i18n="booking.guests">Guests</label>
+              <select id="enq-guests" name="guests" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="enq-name" data-i18n="booking.name">Your name</label>
+              <input type="text" id="enq-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field field-full">
+              <label for="enq-message">
+                <span data-i18n="booking.message">Message</span>
+                <span class="field-optional" data-i18n="booking.optional">(optional)</span>
+              </label>
+              <textarea id="enq-message" name="message" rows="3" data-i18n-placeholder="booking.message.placeholder" placeholder="Anything we should know? Special occasions, questions, etc."></textarea>
+            </div>
+          </div>
+
+          <p class="enquiry-send-label" data-i18n="booking.sendto">Send your enquiry to:</p>
+          <div class="enquiry-hosts">
+            <div class="enquiry-host">
+              <div class="enquiry-host-name">Eironwy <span class="enquiry-host-tag" data-i18n="booking.host.primary">Primary host</span></div>
+              <div class="enquiry-host-actions">
+                <a class="btn-enquire btn-whatsapp" data-action="whatsapp" data-phone="447962141215" data-email="eironwyuk@gmail.com" href="#" target="_blank" rel="noopener">
+                  <span class="btn-icon" aria-hidden="true">&#128241;</span>
+                  <span class="btn-text">
+                    <span class="btn-label" data-i18n="booking.whatsapp">WhatsApp</span>
+                    <span class="btn-detail">+44 7962 141215</span>
+                  </span>
+                </a>
+                <a class="btn-enquire btn-email" data-action="email" data-email="eironwyuk@gmail.com" href="#" target="_blank" rel="noopener">
+                  <span class="btn-icon" aria-hidden="true">&#9993;</span>
+                  <span class="btn-text">
+                    <span class="btn-label" data-i18n="booking.email">Email</span>
+                    <span class="btn-detail">eironwyuk@gmail.com</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="enquiry-host">
+              <div class="enquiry-host-name">Jan <span class="enquiry-host-tag" data-i18n="booking.host.cohost">Co-host</span></div>
+              <div class="enquiry-host-actions">
+                <a class="btn-enquire btn-whatsapp" data-action="whatsapp" data-phone="393450466681" data-email="janholland33@gmail.com" href="#" target="_blank" rel="noopener">
+                  <span class="btn-icon" aria-hidden="true">&#128241;</span>
+                  <span class="btn-text">
+                    <span class="btn-label" data-i18n="booking.whatsapp">WhatsApp</span>
+                    <span class="btn-detail">+39 345 046 6681</span>
+                  </span>
+                </a>
+                <a class="btn-enquire btn-email" data-action="email" data-email="janholland33@gmail.com" href="#" target="_blank" rel="noopener">
+                  <span class="btn-icon" aria-hidden="true">&#9993;</span>
+                  <span class="btn-text">
+                    <span class="btn-label" data-i18n="booking.email">Email</span>
+                    <span class="btn-detail">janholland33@gmail.com</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="enquiry-note" data-i18n="booking.note">No payment is taken now &mdash; we'll confirm dates, pricing, and next steps.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -257,6 +299,6 @@
 
   <script src="js/translations.js"></script>
   <script src="js/i18n.js"></script>
-  <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
+  <script src="js/enquiry.js"></script>
 </body>
 </html>

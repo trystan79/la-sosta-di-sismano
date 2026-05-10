@@ -22,6 +22,16 @@
       }
     }
 
+    var phs = document.querySelectorAll('[data-i18n-placeholder]');
+    for (var p = 0; p < phs.length; p++) {
+      var pkey = phs[p].getAttribute('data-i18n-placeholder');
+      if (t[pkey] !== undefined) {
+        phs[p].setAttribute('placeholder', t[pkey]);
+      }
+    }
+
+    document.dispatchEvent(new CustomEvent('i18n:changed', { detail: { lang: lang } }));
+
     // Update flag toggle active states
     var flags = document.querySelectorAll('.lang-btn');
     for (var j = 0; j < flags.length; j++) {
