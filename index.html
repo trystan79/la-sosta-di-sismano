@@ -6,9 +6,13 @@
   <title>La Sosta di Sismano | Two-Bedroom Holiday Home in Umbria</title>
   <meta name="description" content="A peaceful two-bedroom holiday home for up to 4 guests in Sismano, near Todi in Umbria, with countryside views, Wi-Fi, parking, garden, patio, and step-free access.">
   <link rel="canonical" href="https://www.morganschauer.co.uk/">
+  <link rel="alternate" hreflang="en-GB" href="https://www.morganschauer.co.uk/">
+  <link rel="alternate" hreflang="it-IT" href="https://www.morganschauer.co.uk/it/">
+  <link rel="alternate" hreflang="x-default" href="https://www.morganschauer.co.uk/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="La Sosta di Sismano">
   <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="it_IT">
   <meta property="og:url" content="https://www.morganschauer.co.uk/">
   <meta property="og:title" content="La Sosta di Sismano | Two-Bedroom Holiday Home in Umbria">
   <meta property="og:description" content="A peaceful two-bedroom holiday home for up to 4 guests in Sismano, near Todi in Umbria, with countryside views, Wi-Fi, parking, garden, patio, and step-free access.">
@@ -134,8 +138,8 @@
           <li><a href="#book-now" class="nav-cta" data-i18n="nav.book">Enquire</a></li>
         </ul>
         <div class="lang-toggle">
-          <button class="lang-btn" data-lang="en" aria-label="Switch to English">&#127468;&#127463;</button>
-          <button class="lang-btn" data-lang="it" aria-label="Passa all'italiano">&#127470;&#127481;</button>
+          <span class="lang-btn lang-active" aria-current="page">&#127468;&#127463;</span>
+          <a class="lang-btn" href="it/" aria-label="Passa all'italiano">&#127470;&#127481;</a>
         </div>
       </div>
     </div>
@@ -374,7 +378,7 @@
       </div>
 
       <div class="amenities-toggle-wrap">
-        <button class="amenities-toggle" id="amenities-toggle" onclick="var p=document.getElementById('amenities-full');var o=p.classList.toggle('amenities-open');this.textContent=o?(localStorage.getItem('lang')==='it'?'Nascondi servizi':'Hide amenities'):(localStorage.getItem('lang')==='it'?'Mostra tutti i servizi':'Show all amenities');">Show all amenities</button>
+        <button class="amenities-toggle" id="amenities-toggle" onclick="var p=document.getElementById('amenities-full');var o=p.classList.toggle('amenities-open');this.textContent=o?'Hide amenities':'Show all amenities';">Show all amenities</button>
       </div>
 
       <!-- Expandable full list -->
@@ -605,8 +609,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
-  <script src="js/i18n.js"></script>
   <script src="js/enquiry.js"></script>
 </body>
 </html>

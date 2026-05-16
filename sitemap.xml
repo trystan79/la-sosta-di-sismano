@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.morganschauer.co.uk/</loc>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.morganschauer.co.uk/"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://www.morganschauer.co.uk/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.morganschauer.co.uk/"/>
+  </url>
+  <url>
+    <loc>https://www.morganschauer.co.uk/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.morganschauer.co.uk/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://www.morganschauer.co.uk/it/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.morganschauer.co.uk/about.html"/>
+  </url>
+  <url>
+    <loc>https://www.morganschauer.co.uk/it/</loc>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.morganschauer.co.uk/"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://www.morganschauer.co.uk/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.morganschauer.co.uk/"/>
+  </url>
+  <url>
+    <loc>https://www.morganschauer.co.uk/it/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.morganschauer.co.uk/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://www.morganschauer.co.uk/it/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.morganschauer.co.uk/about.html"/>
+  </url>
+</urlset>
