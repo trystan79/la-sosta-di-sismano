@@ -14,6 +14,7 @@
 :root {
   --terracotta: #C75B39;
   --terracotta-light: #d4795e;
+  --terracotta-dark: #8B4226;
   --olive: #5C6B3C;
   --olive-light: #7a8a5a;
   --cream: #FDF6EC;
@@ -147,15 +148,15 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a.active {
-  color: var(--terracotta);
+  color: var(--terracotta-dark);
   font-weight: 600;
 }
 
 .nav-cta {
   font-size: 0.85rem !important;
   color: var(--white) !important;
-  background-color: var(--terracotta);
-  border: 1px solid var(--terracotta);
+  background-color: var(--terracotta-dark);
+  border: 1px solid var(--terracotta-dark);
   padding: 0.4rem 1rem;
   border-radius: 4px;
   transition: all 0.3s ease !important;
@@ -330,7 +331,7 @@ h1, h2, h3, h4 {
 .intro-text .italian {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  color: var(--terracotta);
+  color: var(--terracotta-dark);
 }
 
 
