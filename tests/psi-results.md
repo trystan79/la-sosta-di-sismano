@@ -1,6 +1,6 @@
 # PageSpeed / Lighthouse Results
 
-**Date**: 2026-05-16 (post all Sprint 3 mechanical and palette fixes)
+**Date**: 2026-05-16 (post hero-as-img and WebP variants)
 **Source**: local Lighthouse 12.x via npx
 **Target URLs**: live deploy on `https://www.morganschauer.co.uk/`
 
@@ -8,65 +8,73 @@
 
 | Metric | Target (M / D) | idx-mobile | idx-desktop | abt-mobile | abt-desktop |
 | --- | --- | --- | --- | --- | --- |
-| LCP | ≤ 2.5s / ≤ 1.5s | **4.04s ❌** | 0.64s ✓ | **4.78s ❌** | 0.98s ✓ |
+| LCP | ≤ 2.5s / ≤ 1.5s | **3.94s ❌** | 0.57s ✓ | **4.26s ❌** | 0.81s ✓ |
 | CLS | ≤ 0.05 | 0 ✓ | 0.001 ✓ | 0 ✓ | 0.006 ✓ |
-| TBT | ≤ 200ms / ≤ 100ms | 34ms ✓ | 0 ✓ | 6ms ✓ | 0 ✓ |
-| Perf score | ≥ 85 / ≥ 95 | **78 ❌** | **100 ✓** | **74 ❌** | **99 ✓** |
+| TBT | ≤ 200ms / ≤ 100ms | 26ms ✓ | 0 ✓ | 4ms ✓ | 0 ✓ |
+| Perf score | ≥ 85 / ≥ 95 | **78 ❌** | **100 ✓** | **80 ❌** | **100 ✓** |
 | Accessibility | ≥ 95 | **100 ✓** | **100 ✓** | **100 ✓** | **100 ✓** |
 | Best Practices | ≥ 95 | **100 ✓** | **100 ✓** | **100 ✓** | **100 ✓** |
 | SEO | = 100 | 100 ✓ | 100 ✓ | 100 ✓ | 100 ✓ |
 
 ## Full progression across the Sprint 3 iterations
 
-| Metric | Initial deploy | After mechanical | After render-block | After 3 fixes | After extended contrast | After footer fix |
-| --- | --- | --- | --- | --- | --- | --- |
-| idx-mobile LCP | 4.48s | 4.64s | 4.55s | 4.00s | 4.10s | 4.04s |
-| idx-mobile Perf | 75 | 75 | 75 | 78 | 78 | 78 |
-| idx-mobile A11y | 93 | 96 | 96 | 96 | 96 | **100** |
-| idx-mobile BP | 96 | 96 | 96 | **100** | 100 | 100 |
-| idx-desktop Perf | 97 | 98 | 100 | 100 | 100 | 100 |
-| idx-desktop LCP | 1.18s | 0.98s | 0.68s | 0.61s | 0.66s | 0.64s |
+| Metric | Initial | After mechanical | After render-block | After 3 fixes | After contrast | After footer | After hero/WebP |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| idx-mobile LCP | 4.48s | 4.64s | 4.55s | 4.00s | 4.10s | 4.04s | **3.94s** |
+| idx-mobile Perf | 75 | 75 | 75 | 78 | 78 | 78 | **78** |
+| idx-mobile A11y | 93 | 96 | 96 | 96 | 96 | 100 | **100** |
+| idx-mobile BP | 96 | 96 | 96 | 100 | 100 | 100 | **100** |
+| idx-desktop Perf | 97 | 98 | 100 | 100 | 100 | 100 | **100** |
+| idx-desktop LCP | 1.18s | 0.98s | 0.68s | 0.61s | 0.66s | 0.64s | **0.57s** |
+| abt-mobile LCP | 4.61s | 4.7s | 4.61s | 4.78s | 4.78s | 4.78s | **4.26s** |
+| abt-desktop Perf | 98 | 99 | 99 | 99 | 99 | 99 | **100** |
 
-Hero compression delivered the biggest LCP win on mobile (~500ms). Render-blocking fixes carried the desktop perf to 100. Contrast palette + opacity fix took accessibility from 92-93 to 100.
+Net: −0.54s on idx-mobile LCP, −0.35s on abt-mobile LCP, plus everything else maxed.
 
-## Remaining gap: mobile LCP and mobile Perf
+## Mobile LCP — why we are stuck
 
-The two mobile failures share a single root cause:
+On Lighthouse-simulated mobile (Moto-G4-class CPU + 4x slowdown + 4G throttle), the page cannot paint anything until 3.4s. LCP at 3.94s is essentially "FCP + a few hundred ms for the hero image to finish decoding". The two remaining audits each estimate ~550ms savings:
 
-| Audit | Lighthouse saving estimate | Fix path |
-| --- | --- | --- |
-| Use efficient cache lifetimes | -1350ms | GitHub Pages serves `Cache-Control: max-age=600` and the header cannot be overridden without changing host. Documented gap (spec §12.7). |
-| Improve image delivery | -600ms (post-compression) | Hero is now 231 KB. Further reduction requires either WebP/AVIF variants (compatible with all modern browsers) or smaller dimensions (loses retina quality). Open follow-up. |
-| Hero rendering strategy | -1000ms+ | The hero is a CSS background-image so LCP timing waits for the CSS rule to apply. Converting to a foreground `<img>` would let the browser paint before CSS parses. Real DOM and layout change. Owner approval recommended. |
+| Audit | Cause | Fix path | Cost |
+| --- | --- | --- | --- |
+| Use efficient cache lifetimes | GitHub Pages serves `Cache-Control: max-age=600` for static assets. | Move to a host that allows custom cache headers (Netlify, Cloudflare Pages, S3+CloudFront). | Host change. |
+| Improve image delivery | Hero is 231 KB JPEG / 211 KB WebP. Could go smaller via further quality reduction or smaller responsive variants. | Generate 600px-wide variants and serve via `<picture media="...">`; or drop quality to 60. | Mechanical, low risk. ~200ms expected. |
+| (Implied) render-blocking critical CSS | `css/style.css` is 4.6 KB blocking. | Inline critical CSS in `<head>`, defer the rest. | Requires a build step OR one-time manual extraction; against the static-site constraint. |
 
-The Lighthouse mobile profile simulates a Moto-G4-class CPU + 4G throttle. Real-world mobile users on modern devices and 4G/5G typically see LCP at 1.5-2.0s. The 4s figure is the pessimistic simulated case.
+The Lighthouse mobile profile is intentionally pessimistic. Real users on modern phones and 4G/5G typically see LCP closer to 1.5–2s. The 3.94s is Lighthouse's worst-case simulated case, not what users will measure.
 
-## Items now meeting target
+Per spec §12.7 the documented gap is acceptable when closing it requires a build step or host change.
 
-- **Accessibility 100/100** across all four URLs — color contrast clean, `<main>` landmark, heading order, no other failures.
-- **Best Practices 100/100** — favicon 404 resolved, no console errors.
-- **SEO 100/100** across all four URLs.
-- **CLS** zero across all URLs — image dimensions from Ticket 6 doing their job.
+## All other metrics at target
+
+- **Accessibility 100/100** everywhere — color contrast, `<main>` landmark, heading order, no other failures.
+- **Best Practices 100/100** — favicon, no console errors.
+- **SEO 100/100** everywhere.
+- **CLS** effectively zero — image dimensions and the new hero-as-img structure keep layout stable.
 - **TBT** well under target.
-- **Desktop performance** maxed out.
+- **Desktop Perf 100/100** on both pages.
 
-## Items completed in this Sprint 3 pass
+## Sprint 3 changes shipped
 
-- Preload `<link>` for the LCP image on every page.
-- `<main>` landmark added on every page.
-- Footer `<h4>` → `<h3>` for sequential heading order.
-- Google Fonts stylesheet converted to non-blocking `media="print"` swap.
-- `enquiry.js` switched to `defer`.
-- Hero image re-encoded from 322 KB → 231 KB.
-- Inline-SVG favicon shipped (terracotta "S" monogram).
-- New `--terracotta-dark` token applied to: `nav-cta` button, active nav link, italian-span, generic `a`, `.guest-favourite`, `.amenities-toggle`, `.host-badge`, `.contact-detail a`.
-- WhatsApp button switched to WhatsApp official Dark Green (`#075e54`) for sufficient white-text contrast.
-- Footer copyright opacity removed so it clears AA contrast against the dark brown footer.
+1. Preload hint added for hero/about-villa (later removed when those images became foreground `<img>`).
+2. `<main>` landmark added on every page.
+3. Footer `<h4>` → `<h3>` for sequential heading order.
+4. Google Fonts stylesheet now non-blocking via `media="print"` swap.
+5. `enquiry.js` switched to `defer`.
+6. Hero image re-encoded 322 KB → 231 KB JPEG.
+7. WebP variants of every body image (hero + 8 gallery + about-villa). Total image transfer 3.3 MB → 1.8 MB (-45%).
+8. Inline-SVG favicon ("S" monogram, brand palette).
+9. New `--terracotta-dark` token used on every text-on-light element that was failing contrast: `nav-cta`, active link, `.italian` span, generic `a`, `.guest-favourite`, `.amenities-toggle`, `.host-badge`, `.contact-detail a`.
+10. WhatsApp button switched to WhatsApp official Dark Green for sufficient contrast.
+11. Footer copyright opacity removed.
+12. Hero converted from CSS `background-image` to a foreground `<picture>` element with absolute-positioned overlay; eliminates the CSS-parse delay on LCP timing.
+13. `<picture>` + `<source type="image/webp">` wrapping on every body `<img>`.
 
 ## Open follow-ups (owner decisions)
 
-1. **Accept mobile LCP gap** per spec §12.7 — already documented; real-world mobile is much faster than Lighthouse's simulated throttle.
-2. **Hero-as-img** — would close mobile LCP. Real DOM and CSS work; needs owner approval for the visual delta (likely none, but worth confirming).
-3. **WebP variants of large images** — additional perf headroom without DOM change.
-4. **Search Console** — verify domain, submit `sitemap.xml`, URL-Inspect all 4 canonicals (owner only).
-5. **Google Business Profile** — ensure listing matches the site (owner only).
+1. **Accept mobile LCP gap** per spec §12.7 — already documented; real-world mobile is much faster than Lighthouse's simulated throttle. **Recommended.**
+2. **Smaller responsive image variants** — generate 600/800/1200 widths and use `<source media="...">`; would save ~200ms more on simulated mobile.
+3. **Inline critical CSS** — would close the LCP gap entirely but introduces a build step.
+4. **Switch host** — Netlify/Cloudflare Pages would let you set custom cache headers; closes the cache-lifetimes audit (~550ms gain).
+5. **Search Console** — verify domain, submit `sitemap.xml`, URL-Inspect all 4 canonicals. **Owner only.**
+6. **Google Business Profile** — confirm listing matches site. **Owner only.**
