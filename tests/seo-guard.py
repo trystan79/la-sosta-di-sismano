@@ -20,6 +20,10 @@ PAGES = ["index.html", "about.html"]
 
 
 def visible_text(html: str) -> str:
+    # Strip <head>: titles and meta are Search-surface metadata, not on-page body
+    # content. The guard exists to catch accidental body-text drift during the
+    # i18n migration and other structural changes.
+    html = re.sub(r"<head\b[^>]*>.*?</head>", "", html, flags=re.S | re.I)
     html = re.sub(r"<script\b[^>]*>.*?</script>", "", html, flags=re.S | re.I)
     html = re.sub(r"<style\b[^>]*>.*?</style>", "", html, flags=re.S | re.I)
     html = re.sub(r"<!--.*?-->", "", html, flags=re.S)
