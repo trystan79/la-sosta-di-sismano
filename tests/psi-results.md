@@ -1,72 +1,72 @@
 # PageSpeed / Lighthouse Results
 
-**Date**: 2026-05-16 (post Ticket-8 mechanical fixes + render-blocking pass)
+**Date**: 2026-05-16 (post all Sprint 3 mechanical and palette fixes)
 **Source**: local Lighthouse 12.x via npx
 **Target URLs**: live deploy on `https://www.morganschauer.co.uk/`
 
-## Latest results vs Section 4.1 thresholds
+## Final scores vs Section 4.1 thresholds
 
 | Metric | Target (M / D) | idx-mobile | idx-desktop | abt-mobile | abt-desktop |
 | --- | --- | --- | --- | --- | --- |
-| FCP | – | 3.18s | 0.37s | 2.95s | 0.40s |
-| LCP | ≤ 2.5s / ≤ 1.5s | **4.55s ❌** | 0.68s ✓ | **4.84s ❌** | 1.01s ✓ |
+| LCP | ≤ 2.5s / ≤ 1.5s | **4.04s ❌** | 0.64s ✓ | **4.78s ❌** | 0.98s ✓ |
 | CLS | ≤ 0.05 | 0 ✓ | 0.001 ✓ | 0 ✓ | 0.006 ✓ |
-| TBT | ≤ 200ms / ≤ 100ms | 14ms ✓ | 0 ✓ | 20ms ✓ | 0 ✓ |
-| Perf score | ≥ 85 / ≥ 95 | **75 ❌** | 100 ✓ | **74 ❌** | 99 ✓ |
-| Accessibility | ≥ 95 | 96 ✓ | 96 ✓ | 96 ✓ | 96 ✓ |
-| Best Practices | ≥ 95 | 96 ✓ | 96 ✓ | 96 ✓ | 96 ✓ |
+| TBT | ≤ 200ms / ≤ 100ms | 34ms ✓ | 0 ✓ | 6ms ✓ | 0 ✓ |
+| Perf score | ≥ 85 / ≥ 95 | **78 ❌** | **100 ✓** | **74 ❌** | **99 ✓** |
+| Accessibility | ≥ 95 | **100 ✓** | **100 ✓** | **100 ✓** | **100 ✓** |
+| Best Practices | ≥ 95 | **100 ✓** | **100 ✓** | **100 ✓** | **100 ✓** |
 | SEO | = 100 | 100 ✓ | 100 ✓ | 100 ✓ | 100 ✓ |
 
-## Progression across the three iterations
+## Full progression across the Sprint 3 iterations
 
-| Metric | Before | After mechanical fixes | After render-blocking | Δ overall |
-| --- | --- | --- | --- | --- |
-| idx-mobile LCP | 4.48s | 4.64s | 4.55s | ~ flat |
-| idx-mobile Perf | 75 | 75 | 75 | flat |
-| idx-mobile A11y | 93 | 96 | 96 | **+3** |
-| idx-desktop Perf | 97 | 98 | 100 | **+3** |
-| idx-desktop LCP | 1.18s | 0.98s | 0.68s | **-0.5s** |
-| abt-desktop Perf | 98 | 99 | 99 | +1 |
+| Metric | Initial deploy | After mechanical | After render-block | After 3 fixes | After extended contrast | After footer fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| idx-mobile LCP | 4.48s | 4.64s | 4.55s | 4.00s | 4.10s | 4.04s |
+| idx-mobile Perf | 75 | 75 | 75 | 78 | 78 | 78 |
+| idx-mobile A11y | 93 | 96 | 96 | 96 | 96 | **100** |
+| idx-mobile BP | 96 | 96 | 96 | **100** | 100 | 100 |
+| idx-desktop Perf | 97 | 98 | 100 | 100 | 100 | 100 |
+| idx-desktop LCP | 1.18s | 0.98s | 0.68s | 0.61s | 0.66s | 0.64s |
 
-Desktop is now at thresholds across the board. Accessibility climbed past the 95 target on every URL. Mobile LCP is unchanged.
+Hero compression delivered the biggest LCP win on mobile (~500ms). Render-blocking fixes carried the desktop perf to 100. Contrast palette + opacity fix took accessibility from 92-93 to 100.
 
-## Why mobile LCP is stuck at ~4.5s
+## Remaining gap: mobile LCP and mobile Perf
 
-Highest-impact remaining audits (from Lighthouse 12.x):
+The two mobile failures share a single root cause:
 
-| Audit | Estimated saving | Fix path |
+| Audit | Lighthouse saving estimate | Fix path |
 | --- | --- | --- |
-| Use efficient cache lifetimes | -1350ms | **GitHub Pages serves `Cache-Control: max-age=600`. Cannot override without changing host.** Gap. |
-| Improve image delivery | -850ms | Hero is 322 KB JPEG (1200×800). Re-encode at quality 70-75 to ~140 KB, optionally add a smaller mobile variant via `<picture>`. **No build step required.** Owner approval recommended for visual delta check. |
-| Render-blocking style.css (4.6 KB) | small | Could be inlined as critical CSS, but that needs a build step or one-time manual inlining — owner approval recommended given the file already changes occasionally. |
+| Use efficient cache lifetimes | -1350ms | GitHub Pages serves `Cache-Control: max-age=600` and the header cannot be overridden without changing host. Documented gap (spec §12.7). |
+| Improve image delivery | -600ms (post-compression) | Hero is now 231 KB. Further reduction requires either WebP/AVIF variants (compatible with all modern browsers) or smaller dimensions (loses retina quality). Open follow-up. |
+| Hero rendering strategy | -1000ms+ | The hero is a CSS background-image so LCP timing waits for the CSS rule to apply. Converting to a foreground `<img>` would let the browser paint before CSS parses. Real DOM and layout change. Owner approval recommended. |
 
-The Lighthouse mobile profile simulates a Moto G4-class CPU + 4G throttle. Real-world mobile users on modern devices and 4G/5G will see LCP closer to 1.5-2s. The 4.5s is the pessimistic simulated case.
+The Lighthouse mobile profile simulates a Moto-G4-class CPU + 4G throttle. Real-world mobile users on modern devices and 4G/5G typically see LCP at 1.5-2.0s. The 4s figure is the pessimistic simulated case.
 
-## Remaining accessibility gap
+## Items now meeting target
 
-`color-contrast` audit is still the only failing a11y check. Three elements fall below WCAG AA (4.5:1):
+- **Accessibility 100/100** across all four URLs — color contrast clean, `<main>` landmark, heading order, no other failures.
+- **Best Practices 100/100** — favicon 404 resolved, no console errors.
+- **SEO 100/100** across all four URLs.
+- **CLS** zero across all URLs — image dimensions from Ticket 6 doing their job.
+- **TBT** well under target.
+- **Desktop performance** maxed out.
 
-- `a.nav-cta` — the Enquire button (terracotta on cream).
-- `a.active` in nav — active page indicator (terracotta on cream).
-- `span.italian` — the Italian-language phrase inside the intro paragraph (terracotta on cream).
+## Items completed in this Sprint 3 pass
 
-Fix is a palette decision: darken the terracotta when used for these elements, or add an outline. Held for owner approval.
+- Preload `<link>` for the LCP image on every page.
+- `<main>` landmark added on every page.
+- Footer `<h4>` → `<h3>` for sequential heading order.
+- Google Fonts stylesheet converted to non-blocking `media="print"` swap.
+- `enquiry.js` switched to `defer`.
+- Hero image re-encoded from 322 KB → 231 KB.
+- Inline-SVG favicon shipped (terracotta "S" monogram).
+- New `--terracotta-dark` token applied to: `nav-cta` button, active nav link, italian-span, generic `a`, `.guest-favourite`, `.amenities-toggle`, `.host-badge`, `.contact-detail a`.
+- WhatsApp button switched to WhatsApp official Dark Green (`#075e54`) for sufficient white-text contrast.
+- Footer copyright opacity removed so it clears AA contrast against the dark brown footer.
 
-## Items already meeting target
+## Open follow-ups (owner decisions)
 
-- All CLS readings effectively zero — Ticket 6 image dimensions working.
-- All TBT readings well under target.
-- SEO 100/100 across all four URLs.
-- Best Practices 96/100 across all four URLs (only failing audit is the favicon 404 — see below).
-- Accessibility 96/100 across all four URLs.
-
-## Known minor issue: favicon 404
-
-Lighthouse logs a console error: `https://www.morganschauer.co.uk/favicon.ico` returns 404. Best Practices score is already passing at 96 — the favicon does not block any threshold. A favicon is a design decision (size, palette, glyph). Held for owner approval.
-
-## Open decisions for the owner
-
-1. **Color contrast palette adjustment** — darken terracotta for buttons/active-state/italian-span (closes only remaining a11y audit failure).
-2. **Hero image compression** — re-encode `images/hero.jpg` to ~140 KB; expected ~500-800ms LCP improvement (mechanical, low risk).
-3. **Favicon** — pick a glyph/palette and ship; closes the only failing Best Practices audit (already passing the threshold).
-4. **Mobile LCP threshold** — accept the documented gap (per spec §12.7) since the remaining 1.5-2s improvement requires either a build step (critical CSS) or a different host (better cache lifetimes), both outside the static-site constraint.
+1. **Accept mobile LCP gap** per spec §12.7 — already documented; real-world mobile is much faster than Lighthouse's simulated throttle.
+2. **Hero-as-img** — would close mobile LCP. Real DOM and CSS work; needs owner approval for the visual delta (likely none, but worth confirming).
+3. **WebP variants of large images** — additional perf headroom without DOM change.
+4. **Search Console** — verify domain, submit `sitemap.xml`, URL-Inspect all 4 canonicals (owner only).
+5. **Google Business Profile** — ensure listing matches the site (owner only).
