@@ -186,7 +186,7 @@ var translations = {
     // Nav
     'nav.home': 'Home',
     'nav.about': 'Chi siamo',
-    'nav.book': 'Prenota il tuo soggiorno',
+    'nav.book': 'Richiedi informazioni',
 
     // Hero
     'hero.subtitle': 'Sismano \u00b7 Umbria \u00b7 Italia',
@@ -318,9 +318,9 @@ var translations = {
 
     // Footer
     'footer.explore': 'Esplora',
-    'footer.book.title': 'Prenota il tuo soggiorno',
-    'footer.book.text': 'Inviaci una richiesta su WhatsApp o email \u2014 rispondiamo rapidamente.',
-    'footer.book.link': 'Richiedi informazioni \u2192',
+    'footer.book.title': 'Organizza il tuo soggiorno',
+    'footer.book.text': 'Inviaci le tue date e le tue domande: confermeremo disponibilit\u00e0 e prezzo.',
+    'footer.book.link': 'Invia una richiesta \u2192',
     'footer.rights': '\u00a9 2026 La Sosta di Sismano. Tutti i diritti riservati.',
 
     // About page
