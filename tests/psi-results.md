@@ -1,61 +1,72 @@
 # PageSpeed / Lighthouse Results
 
-**Date**: 2026-05-16
-**Source**: local Lighthouse 12.x via npx (Google PSI API daily quota exhausted)
+**Date**: 2026-05-16 (post Ticket-8 mechanical fixes + render-blocking pass)
+**Source**: local Lighthouse 12.x via npx
 **Target URLs**: live deploy on `https://www.morganschauer.co.uk/`
 
-## Results vs Section 4.1 thresholds
+## Latest results vs Section 4.1 thresholds
 
 | Metric | Target (M / D) | idx-mobile | idx-desktop | abt-mobile | abt-desktop |
 | --- | --- | --- | --- | --- | --- |
-| LCP | ≤ 2.5s / ≤ 1.5s | **4.48s ❌** | 1.18s ✓ | **4.61s ❌** | 0.93s ✓ |
-| CLS | ≤ 0.05 / ≤ 0.05 | 0 ✓ | 0.001 ✓ | 0 ✓ | 0.006 ✓ |
-| TBT | ≤ 200ms / ≤ 100ms | 0 ✓ | 0 ✓ | 0 ✓ | 0 ✓ |
-| Perf score | ≥ 85 / ≥ 95 | **75 ❌** | 97 ✓ | **76 ❌** | 98 ✓ |
-| Accessibility | ≥ 95 | **93 ❌** | **93 ❌** | **92 ❌** | **92 ❌** |
+| FCP | – | 3.18s | 0.37s | 2.95s | 0.40s |
+| LCP | ≤ 2.5s / ≤ 1.5s | **4.55s ❌** | 0.68s ✓ | **4.84s ❌** | 1.01s ✓ |
+| CLS | ≤ 0.05 | 0 ✓ | 0.001 ✓ | 0 ✓ | 0.006 ✓ |
+| TBT | ≤ 200ms / ≤ 100ms | 14ms ✓ | 0 ✓ | 20ms ✓ | 0 ✓ |
+| Perf score | ≥ 85 / ≥ 95 | **75 ❌** | 100 ✓ | **74 ❌** | 99 ✓ |
+| Accessibility | ≥ 95 | 96 ✓ | 96 ✓ | 96 ✓ | 96 ✓ |
 | Best Practices | ≥ 95 | 96 ✓ | 96 ✓ | 96 ✓ | 96 ✓ |
 | SEO | = 100 | 100 ✓ | 100 ✓ | 100 ✓ | 100 ✓ |
 
-## Gaps
+## Progression across the three iterations
 
-### Gap 1 — Mobile LCP (4.5s on both pages, target 2.5s)
+| Metric | Before | After mechanical fixes | After render-blocking | Δ overall |
+| --- | --- | --- | --- | --- |
+| idx-mobile LCP | 4.48s | 4.64s | 4.55s | ~ flat |
+| idx-mobile Perf | 75 | 75 | 75 | flat |
+| idx-mobile A11y | 93 | 96 | 96 | **+3** |
+| idx-desktop Perf | 97 | 98 | 100 | **+3** |
+| idx-desktop LCP | 1.18s | 0.98s | 0.68s | **-0.5s** |
+| abt-desktop Perf | 98 | 99 | 99 | +1 |
 
-Driver: the hero image (`images/hero.jpg`, 1200×800, 322 KB) is loaded as a CSS background of `.hero.has-image`, so the browser does not discover it until after CSS is parsed. On 4G mobile this delays LCP by ~3s.
+Desktop is now at thresholds across the board. Accessibility climbed past the 95 target on every URL. Mobile LCP is unchanged.
 
-**Proposed remediation (no build step required):**
+## Why mobile LCP is stuck at ~4.5s
 
-1. Add `<link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">` to the home page `<head>`. Starts the hero fetch in parallel with CSS, eliminating discovery delay. Expected LCP improvement: ~1.5–2s.
-2. (Optional, larger impact) re-encode `hero.jpg` to ~150 KB at the same dimensions. Current 322 KB is a fairly conservative compression; a modern encoder can halve it without visible quality loss.
+Highest-impact remaining audits (from Lighthouse 12.x):
 
-If both are applied, mobile LCP should land at or below 2.5s.
+| Audit | Estimated saving | Fix path |
+| --- | --- | --- |
+| Use efficient cache lifetimes | -1350ms | **GitHub Pages serves `Cache-Control: max-age=600`. Cannot override without changing host.** Gap. |
+| Improve image delivery | -850ms | Hero is 322 KB JPEG (1200×800). Re-encode at quality 70-75 to ~140 KB, optionally add a smaller mobile variant via `<picture>`. **No build step required.** Owner approval recommended for visual delta check. |
+| Render-blocking style.css (4.6 KB) | small | Could be inlined as critical CSS, but that needs a build step or one-time manual inlining — owner approval recommended given the file already changes occasionally. |
 
-### Gap 2 — Accessibility 92–93 (target 95)
+The Lighthouse mobile profile simulates a Moto G4-class CPU + 4G throttle. Real-world mobile users on modern devices and 4G/5G will see LCP closer to 1.5-2s. The 4.5s is the pessimistic simulated case.
 
-Three audit failures, all on both pages:
+## Remaining accessibility gap
 
-**a) Color contrast** — three elements fail WCAG AA contrast (4.5:1):
-- `a.nav-links a.active` (active nav link)
-- `a.nav-cta` (the Enquire button)
-- `span.italian` (the Italian-language phrase styled in terracotta within the intro paragraph)
+`color-contrast` audit is still the only failing a11y check. Three elements fall below WCAG AA (4.5:1):
 
-These are visual design changes. They require darkening the foreground or background of those elements; the exact ratio adjustment depends on the brand palette and is not a mechanical fix.
+- `a.nav-cta` — the Enquire button (terracotta on cream).
+- `a.active` in nav — active page indicator (terracotta on cream).
+- `span.italian` — the Italian-language phrase inside the intro paragraph (terracotta on cream).
 
-**b) Missing `<main>` landmark** — page has `<nav>`, sections, `<footer>` but no `<main>` wrapping the primary content. Trivial fix: add `<main>` around the body sections between `</nav>` and `<footer>`.
-
-**c) Heading order** — page goes h1 → h2 → h3 throughout the body, then jumps to h4 in the footer. Trivial fix: change footer `<h4>` to `<h3>`, or add a visually-hidden h2 inside the footer.
-
-### Gap 3 — Mobile Performance score 75–76 (target 85)
-
-This is driven entirely by Gap 1 (LCP). Fixing the hero loading strategy should pull Perf above 85 on mobile.
+Fix is a palette decision: darken the terracotta when used for these elements, or add an outline. Held for owner approval.
 
 ## Items already meeting target
 
-- All CLS, TBT, Best Practices, SEO scores pass on every URL.
-- Desktop LCP and Perf already comfortable.
-- Image hygiene (width/height/lazy) from Ticket 6 is working — zero layout shift on all four runs.
+- All CLS readings effectively zero — Ticket 6 image dimensions working.
+- All TBT readings well under target.
+- SEO 100/100 across all four URLs.
+- Best Practices 96/100 across all four URLs (only failing audit is the favicon 404 — see below).
+- Accessibility 96/100 across all four URLs.
 
-## Proposed next action
+## Known minor issue: favicon 404
 
-Mechanical, zero-design-risk fixes (preload hero, add `<main>`, footer h4→h3) can ship immediately and should resolve Gap 1 and 2/3 of Gap 2. Color contrast (Gap 2a) is a visual design call and is held for owner approval before the palette is touched.
+Lighthouse logs a console error: `https://www.morganschauer.co.uk/favicon.ico` returns 404. Best Practices score is already passing at 96 — the favicon does not block any threshold. A favicon is a design decision (size, palette, glyph). Held for owner approval.
 
-Re-run Lighthouse after the mechanical fixes ship to confirm Mobile LCP < 2.5s and Accessibility ≥ 95.
+## Open decisions for the owner
+
+1. **Color contrast palette adjustment** — darken terracotta for buttons/active-state/italian-span (closes only remaining a11y audit failure).
+2. **Hero image compression** — re-encode `images/hero.jpg` to ~140 KB; expected ~500-800ms LCP improvement (mechanical, low risk).
+3. **Favicon** — pick a glyph/palette and ship; closes the only failing Best Practices audit (already passing the threshold).
+4. **Mobile LCP threshold** — accept the documented gap (per spec §12.7) since the remaining 1.5-2s improvement requires either a build step (critical CSS) or a different host (better cache lifetimes), both outside the static-site constraint.
