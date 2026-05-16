@@ -1270,3 +1270,22 @@ h1, h2, h3, h4 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* FAQ section */
+.faq {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-item + .faq-item {
+  margin-top: 2rem;
+}
+.faq h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: inherit;
+}
+.faq p {
+  margin: 0;
+  line-height: 1.7;
+}

@@ -3,7 +3,7 @@ var translations = {
     // Nav
     'nav.home': 'Home',
     'nav.about': 'About',
-    'nav.book': 'Book Your Stay',
+    'nav.book': 'Enquire',
 
     // Hero
     'hero.subtitle': 'Sismano \u00b7 Umbria \u00b7 Italy',
@@ -135,9 +135,9 @@ var translations = {
 
     // Footer
     'footer.explore': 'Explore',
-    'footer.book.title': 'Book Your Stay',
-    'footer.book.text': 'Send an enquiry by WhatsApp or email \u2014 we reply quickly.',
-    'footer.book.link': 'Enquire Now \u2192',
+    'footer.book.title': 'Plan Your Stay',
+    'footer.book.text': 'Send your dates and questions, and we will confirm availability and pricing.',
+    'footer.book.link': 'Send an Enquiry \u2192',
     'footer.rights': '\u00a9 2026 La Sosta di Sismano. All rights reserved.',
 
     // About page
