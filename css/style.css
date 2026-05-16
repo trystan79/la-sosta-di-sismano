@@ -61,7 +61,7 @@ img {
 }
 
 a {
-  color: var(--terracotta);
+  color: var(--terracotta-dark);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -504,12 +504,12 @@ h1, h2, h3, h4 {
 }
 
 .btn-whatsapp {
-  background-color: #25d366;
+  background-color: #075e54;
   color: #fff;
 }
 
 .btn-whatsapp:hover {
-  background-color: #1ebe5a;
+  background-color: #0a8275;
 }
 
 .btn-email {
@@ -681,8 +681,8 @@ h1, h2, h3, h4 {
   font-family: 'Lato', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--terracotta);
-  border: 2px solid var(--terracotta);
+  color: var(--terracotta-dark);
+  border: 2px solid var(--terracotta-dark);
   padding: 0.35rem 1rem;
   border-radius: 20px;
   margin-bottom: 1rem;
@@ -791,9 +791,9 @@ h1, h2, h3, h4 {
 .amenities-toggle {
   font-family: 'Lato', sans-serif;
   font-size: 0.95rem;
-  color: var(--terracotta);
+  color: var(--terracotta-dark);
   background: none;
-  border: 1px solid var(--terracotta);
+  border: 1px solid var(--terracotta-dark);
   padding: 0.6rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
@@ -869,8 +869,8 @@ h1, h2, h3, h4 {
 .host-badge {
   font-family: 'Lato', sans-serif;
   font-size: 0.8rem;
-  color: var(--terracotta);
-  border: 1px solid var(--terracotta);
+  color: var(--terracotta-dark);
+  border: 1px solid var(--terracotta-dark);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-weight: 600;
@@ -1147,7 +1147,7 @@ h1, h2, h3, h4 {
 }
 
 .contact-detail a {
-  color: var(--terracotta);
+  color: var(--terracotta-dark);
 }
 
 .contact-detail a:hover {
