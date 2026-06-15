@@ -1,0 +1,35 @@
+name: Update availability calendar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-availability:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build sanitized availability files
+        env:
+          AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
+          BOOKING_ICAL_URL: ${{ secrets.BOOKING_ICAL_URL }}
+          VRBO_ICAL_URL: ${{ secrets.VRBO_ICAL_URL }}
+        run: python3 scripts/build-availability.py --require-feed
+
+      - name: Commit generated availability files
+        run: |
+          if git diff --quiet -- data/availability.json calendar/la-sosta-availability.ics; then
+            echo "No availability changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/availability.json calendar/la-sosta-availability.ics
+          git commit -m "Update availability calendar"
+          git push

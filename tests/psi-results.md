@@ -2,7 +2,7 @@
 
 **Date**: 2026-05-16 (post hero-as-img and WebP variants)
 **Source**: local Lighthouse 12.x via npx
-**Target URLs**: live deploy on `https://www.morganschauer.co.uk/`
+**Target URLs**: live deploy on `https://www.villasosta.com/`
 
 ## Final scores vs Section 4.1 thresholds
 
