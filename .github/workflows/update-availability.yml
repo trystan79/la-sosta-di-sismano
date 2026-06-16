@@ -15,7 +15,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Check feed configuration
+        id: feeds
+        env:
+          AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
+          BOOKING_ICAL_URL: ${{ secrets.BOOKING_ICAL_URL }}
+          VRBO_ICAL_URL: ${{ secrets.VRBO_ICAL_URL }}
+        run: |
+          if [ -z "${AIRBNB_ICAL_URL}${BOOKING_ICAL_URL}${VRBO_ICAL_URL}" ]; then
+            echo "No iCal feed secrets configured; skipping availability update."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+
       - name: Build sanitized availability files
+        if: steps.feeds.outputs.configured == 'true'
         env:
           AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
           BOOKING_ICAL_URL: ${{ secrets.BOOKING_ICAL_URL }}
@@ -23,6 +38,7 @@ jobs:
         run: python3 scripts/build-availability.py --require-feed
 
       - name: Commit generated availability files
+        if: steps.feeds.outputs.configured == 'true'
         run: |
           if git diff --quiet -- data/availability.json calendar/la-sosta-availability.ics; then
             echo "No availability changes to commit."
