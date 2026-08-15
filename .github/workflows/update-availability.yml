@@ -49,3 +49,23 @@ jobs:
           git add data/availability.json calendar/la-sosta-availability.ics
           git commit -m "Update availability calendar"
           git push
+
+      # GitHub disables scheduled workflows in public repos after 60 days with no
+      # repository activity. When bookings are quiet — or the feed secrets are
+      # unset — nothing above ever commits, so the clock runs out and the
+      # schedule stops. Push a heartbeat before that happens.
+      - name: Keep the schedule alive
+        run: |
+          age_days=$(( ( $(date -u +%s) - $(git log -1 --format=%ct) ) / 86400 ))
+          echo "Last commit on $(git rev-parse --abbrev-ref HEAD) was ${age_days} day(s) ago."
+          if [ "$age_days" -lt 45 ]; then
+            echo "Under the 45-day threshold; no heartbeat needed."
+            exit 0
+          fi
+          echo "Approaching the 60-day inactivity limit; pushing a heartbeat."
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > .github/workflow-heartbeat
+          git add .github/workflow-heartbeat
+          git commit -m "chore: workflow heartbeat (keeps the schedule enabled)"
+          git push
