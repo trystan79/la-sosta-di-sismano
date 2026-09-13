@@ -6,7 +6,6 @@
   var copy = {
     en: {
       loading: 'Loading availability...',
-      setup: 'Calendar sync is ready. Live unavailable dates will appear here after the platform feed URLs are connected.',
       empty: 'No unavailable nights are currently published. Please enquire to confirm.',
       error: 'Availability could not be loaded. Please enquire to confirm your dates.',
       unavailable: 'Unavailable',
@@ -16,7 +15,6 @@
     },
     it: {
       loading: 'Caricamento disponibilita...',
-      setup: 'La sincronizzazione del calendario e pronta. Le date non disponibili appariranno qui dopo il collegamento dei feed.',
       empty: 'Al momento non risultano notti non disponibili. Contattaci per confermare.',
       error: 'Non e stato possibile caricare la disponibilita. Contattaci per confermare le date.',
       unavailable: 'Non disponibile',
@@ -139,16 +137,7 @@
 
     body.innerHTML = '';
 
-    var feedCount = Number(state.data.feedCount || 0);
     var ranges = Array.isArray(state.data.unavailable) ? state.data.unavailable : [];
-
-    if (!feedCount) {
-      var setup = document.createElement('p');
-      setup.className = 'availability-message';
-      setup.textContent = text('setup');
-      body.appendChild(setup);
-      return;
-    }
 
     var controls = document.createElement('div');
     controls.className = 'availability-controls';
@@ -205,7 +194,7 @@
       footer.appendChild(empty);
     }
 
-    var generatedAt = formatGeneratedAt(state.data.generatedAt);
+    var generatedAt = Number(state.data.feedCount || 0) ? formatGeneratedAt(state.data.generatedAt) : '';
     if (generatedAt) {
       var updated = document.createElement('span');
       updated.textContent = text('updated') + ': ' + generatedAt;
